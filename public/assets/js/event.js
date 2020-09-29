@@ -1,4 +1,5 @@
 // Get references to page elements
+
 const $eventText = $('#event-text');
 const $eventDescription = $('#event-description');
 const $submitBtn = $('#submit');
@@ -7,11 +8,13 @@ const $eventList = $('#event-list');
 // The API object contains methods for each kind of request we'll make
 const API = {
   saveEvent: function (event) {
+
     return $.ajax({
       headers: {
         'Content-Type': 'application/json'
       },
       type: 'POST',
+
       url: 'api/events',
       data: JSON.stringify(event)
     });
@@ -25,10 +28,12 @@ const API = {
   deleteEvent: function (id) {
     return $.ajax({
       url: 'api/events/' + id,
+      
       type: 'DELETE'
     });
   }
 };
+
 
 // refreshevents gets new events from the db and repopulates the list
 const refreshEvents = function () {
@@ -41,7 +46,9 @@ const refreshEvents = function () {
       const $li = $('<li>')
         .attr({
           class: 'list-group-item',
+
           'data-id': event.id
+
         })
         .append($a);
 
@@ -90,9 +97,12 @@ const handleDeleteBtnClick = function () {
 
   API.deleteevent(idToDelete).then(function () {
     refreshEvents();
+
   });
 };
 
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
+
 $eventList.on('click', '.delete', handleDeleteBtnClick);
+

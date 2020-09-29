@@ -56,15 +56,16 @@ module.exports = (db) => {
     }
   });
 
-  // Load example index page
-  router.get('/example', function (req, res) {
+  // Load event index page
+  router.get('/event', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Example.findAll({ where: { UserId: req.session.passport.user.id }, raw: true }).then(function (dbExamples) {
-        res.render('example', {
+      db.Event.findAll({ }).then(function (dbEvents) {
+        res.render('event', {
+          // needs update
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
           msg: 'Welcome!',
-          examples: dbExamples
+          examples: dbEvents
         });
       });
     } else {
@@ -73,13 +74,14 @@ module.exports = (db) => {
   });
 
   // Load example page and pass in an example by id
-  router.get('/example/:id', function (req, res) {
+  router.get('/event/:id', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Example.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbExample) {
-        res.render('example-detail', {
+      db.Event.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbEvent) {
+        res.render('event-detail', {
+          // needs update
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          example: dbExample
+          example: dbEvent
         });
       });
     } else {
