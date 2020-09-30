@@ -9,21 +9,24 @@ module.exports = function (sequelize, DataTypes) {
     },
     date: {
       type: DataTypes.DATE,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: new Date(),
       validate: {
         isDate: true
       }
     },
     location: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: 'NC',
       validate: {
         len: [1, 160]
       }
     },
     type: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
+      defaultValue: 'partay',
       validate: {
         len: [1, 160]
       }

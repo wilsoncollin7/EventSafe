@@ -9,7 +9,8 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     location: {
-      type: DataTypes.STRING
+      type: DataTypes.STRING,
+      defaultValue: null
     },
     email: {
       type: DataTypes.STRING,
