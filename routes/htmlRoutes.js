@@ -65,7 +65,7 @@ module.exports = (db) => {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
           msg: 'Welcome!',
-          examples: dbEvents
+          events: dbEvents
         });
       });
     } else {
@@ -81,7 +81,7 @@ module.exports = (db) => {
           // needs update
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          example: dbEvent
+          event: dbEvent
         });
       });
     } else {
