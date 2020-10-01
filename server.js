@@ -6,7 +6,7 @@ const morgan = require('morgan');
 const passport = require('passport');
 const moment = require('moment');
 const helmet = require('helmet');
-const PORT = process.env.PORT || 3333;
+const PORT = process.env.PORT || 3334;
 const app = express();
 const db = require('./models');
 
