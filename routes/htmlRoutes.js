@@ -73,6 +73,39 @@ module.exports = (db) => {
     }
   });
 
+  // Load review index page
+  router.get('/review', function (req, res) {
+    if (req.isAuthenticated()) {
+      db.Review.findAll({ }).then(function (dbReviews) {
+        res.render('review', {
+        // needs update
+          userInfo: req.session.passport.user,
+          isloggedin: req.isAuthenticated(),
+          msg: 'Welcome!',
+          reviews: dbReviews
+        });
+      });
+    } else {
+      res.redirect('/');
+    }
+  });
+
+  // Load review page and pass in an review by id
+  router.get('/review/:id', function (req, res) {
+    if (req.isAuthenticated()) {
+      db.Review.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbReview) {
+        res.render('review-detail', {
+          // needs update
+          userInfo: req.session.passport.user,
+          isloggedin: req.isAuthenticated(),
+          event: dbReview
+        });
+      });
+    } else {
+      res.redirect('/');
+    }
+  });
+
   // Logout
   router.get('/logout', (req, res, next) => {
     req.logout();
