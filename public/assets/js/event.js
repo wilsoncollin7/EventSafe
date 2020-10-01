@@ -37,7 +37,7 @@ const refreshEvents = function () {
     const $events = data.map(function (event) {
       const $a = $('<a>')
         .text(event.name)
-        .attr('href', '/events/' + event.id);
+        .attr('href', '/event/' + event.id);
 
       const $li = $('<li>')
         .attr({
@@ -99,3 +99,5 @@ const handleDeleteBtnClick = function () {
 $submitBtn.on('click', handleFormSubmit);
 
 $eventList.on('click', '.delete', handleDeleteBtnClick);
+
+refreshEvents();
