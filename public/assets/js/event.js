@@ -1,5 +1,8 @@
 // Get references to page elements
 const $eventText = $('#event-text');
+const $eventDate = $('#event-date');
+const $eventloc = $('#event-loc');
+const $eventType = $('#event-type');
 const $eventDescription = $('#event-description');
 const $submitBtn = $('#submit');
 const $eventList = $('#event-list');
@@ -69,6 +72,9 @@ const handleFormSubmit = function (event) {
 
   const events = {
     name: $eventText.val().trim(),
+    date: $eventDate.val().trim(),
+    location: $eventloc.val().trim(),
+    type: $eventType.val().trim(),
     description: $eventDescription.val().trim(),
     UserId: window.userId
   };
@@ -95,6 +101,7 @@ const handleDeleteBtnClick = function () {
   });
 };
 
+refreshEvents();
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
 
