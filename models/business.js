@@ -33,7 +33,7 @@ module.exports = function (sequelize, DataTypes) {
   Business.associate = function (models) {
     Business.hasMany(models.Review, {
       foreignKey: {
-        allowNull: false
+        allowNull: true
       }
     });
   };
