@@ -61,7 +61,6 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Event.findAll({ }).then(function (dbEvents) {
         res.render('event', {
-          // needs update
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
           msg: 'Welcome!',
@@ -78,7 +77,6 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Event.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbEvent) {
         res.render('event-detail', {
-          // needs update
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
           event: dbEvent
@@ -94,7 +92,6 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Review.findAll({ }).then(function (dbReviews) {
         res.render('review', {
-        // needs update
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
           msg: 'Welcome!',
@@ -111,10 +108,9 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Review.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbReview) {
         res.render('review-detail', {
-          // needs update
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          event: dbReview
+          review: dbReview
         });
       });
     } else {
