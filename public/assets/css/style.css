@@ -1,7 +1,23 @@
 body {
-  color: white;
+  color: #F2CC8F;
   background-size: cover;
-  height:100%
+  height:100%;
+  background-color: #F4F1DE;
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
+.navbar {
+  background-color: #E07A5F !important;
+}
+.nav-link {
+  color: #3D405B !important;
+  font-size: larger;
+}
+
+.navbar-brand {
+  color: #F2CC8F !important;
+  font-size: 30px;
+  font-weight: bolder;
 }
 
 .jumbotron {
@@ -13,8 +29,8 @@ body {
 }
 
 .btn {
-  color:white;
-  background:#cadde1;
+  color:#F4F1DE;
+  background:#3D405B;
   border: 1px solid white;
 }
 
@@ -27,7 +43,7 @@ body {
 #update-err-msg,
 #login-err-msg,
 #create-err-msg {
-  color: red !important;
+  color: #E07A5F !important;
 }
 
 #go-home {
@@ -38,7 +54,7 @@ body {
 .container {
   padding-bottom: 2%;
   margin-top: 10%;
-  background: rgba(86, 101, 115,.6);
+  background: #81B29A;
   height:100%;
   border-radius: .25rem;
   margin-bottom: 2%;
@@ -46,10 +62,10 @@ body {
 }
 
 [data-useremail="true"] {
-  color: white !important;
+  color: #F4F1DE !important;
 }
 [data-register="true"] {
-  color: white !important;
+  color: #F4F1DE !important;
 }
 
 .lead {
@@ -62,7 +78,7 @@ body {
 }
 
 hr {
-  background-color: #fff !important;
+  background-color: #F4F1DE !important;
 }
 
 .list-group-item {
@@ -70,5 +86,10 @@ hr {
 }
 
 .card-body {
-  color: #444;
+  color: #3D405B;
+  background-color: #F4F1DE;
+}
+
+a {
+  color: #3D405B;
 }

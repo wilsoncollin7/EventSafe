@@ -1,6 +1,8 @@
 // Get references to page elements
 const $reviewTitle = $('#review-title');
 const $reviewDescription = $('#review-description');
+const $reviewLocation = $('#review-loc');
+const $reviewType = $('#review-type');
 const $submitBtn = $('#submit');
 const $reviewList = $('#review-list');
 
@@ -69,6 +71,8 @@ const handleFormSubmit = function (review) {
 
   const reviews = {
     title: $reviewTitle.val().trim(),
+    location: $reviewLocation.val().trim(),
+    type: $reviewType.val().trim(),
     description: $reviewDescription.val().trim(),
     UserId: window.userId
   };
