@@ -4,11 +4,11 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h2>{{msg}}</h2>
+        <h2 class="mt-4">{{msg}}</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
-            <label for="event-text">events Text</label>
-            <input type="text" id="event-text" class="form-control" aria-describedby="event-text" placeholder="Enter events Text">
+            <label for="event-text">Event Name</label>
+            <input type="text" id="event-text" class="form-control" aria-describedby="event-text" placeholder="what is your event name?">
           </div>
           <div class="form-group">
             <label for="event-date">Date</label>
@@ -16,7 +16,7 @@
           </div>
           <div class="form-group">
             <label for="event-loc">Location</label>
-            <input type="text" id="event-loc" class="form-control" aria-describedby="event-text" placeholder="Enter events Location">
+            <input type="text" id="event-loc" class="form-control" aria-describedby="event-text" placeholder="where?">
           </div>
           <div class="form-group">
             <label for="event-type">Type</label>
@@ -29,12 +29,12 @@
             </select>
           </div>
           <div class="form-group">
-            <label for="event-description">events Description</label>
-            <textarea class="form-control" id="event-description" aria-describedby="event-description" placeholder="Enter events Description"></textarea>
+            <label for="event-description">Description</label>
+            <textarea class="form-control" id="event-description" aria-describedby="event-description" placeholder="tell us about it!"></textarea>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
-        <h4>events belong to this user:</h4>
+        <h4>events belonging to this user:</h4>
         <ul id="event-list" class="list-group">
           {{#each events}}
           <li data-id="{{this.id}}" class="list-group-item">

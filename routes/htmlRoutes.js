@@ -32,12 +32,28 @@ module.exports = (db) => {
 
   // Load dashboard page
   router.get('/', (req, res) => {
-    res.render('dashboard');
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('dashboard', user);
+    } else {
+      res.render('dashboard');
+    }
   });
 
   // Load dashboard page
   router.get('/dashboard', (req, res) => {
-    res.render('dashboard');
+    if (req.isAuthenticated()) {
+      const user = {
+        user: req.session.passport.user,
+        isloggedin: req.isAuthenticated()
+      };
+      res.render('dashboard', user);
+    } else {
+      res.render('dashboard');
+    }
   });
 
   // Load event index page
