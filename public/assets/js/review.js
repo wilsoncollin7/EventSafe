@@ -1,5 +1,5 @@
 // Get references to page elements
-const $reviewText = $('#review-text');
+const $reviewTitle = $('#review-title');
 const $reviewDescription = $('#review-description');
 const $submitBtn = $('#submit');
 const $reviewList = $('#review-list');
@@ -36,8 +36,8 @@ const refreshReview = function () {
   API.getReview().then(function (data) {
     const $reviews = data.map(function (review) {
       const $a = $('<a>')
-        .text(review.name)
-        .attr('href', '/review/' + review.id);
+        .text(review.title)
+        .attr('href', '/reviews/' + review.id);
 
       const $li = $('<li>')
         .attr({
@@ -68,12 +68,12 @@ const handleFormSubmit = function (review) {
   review.preventDefault();
 
   const reviews = {
-    name: $reviewText.val().trim(),
+    title: $reviewTitle.val().trim(),
     description: $reviewDescription.val().trim(),
     UserId: window.userId
   };
 
-  if (!(reviews.name && reviews.description)) {
+  if (!(reviews.title && reviews.description)) {
     alert('You must enter an event text and description!');
     return;
   }
@@ -81,7 +81,7 @@ const handleFormSubmit = function (review) {
     refreshReview();
   });
 
-  $reviewText.val('');
+  $reviewTitle.val('');
   $reviewDescription.val('');
 };
 
