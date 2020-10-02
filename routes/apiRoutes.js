@@ -3,7 +3,8 @@ const ensureAuthenticated = require('../middlewares/ensureAuthenticated');
 
 module.exports = (passport, db) => {
   const AuthController = require('../controllers/authController')(passport, db);
-  const AppController = require('../controllers/appController')(db);
+  const EventController = require('../controllers/eventController')(db);
+  const ReviewController = require('../controllers/reviewController')(db);
 
   // Authentication
   router.post('/register', AuthController.register);
@@ -13,10 +14,15 @@ module.exports = (passport, db) => {
   router.delete('/user/:id', ensureAuthenticated, AuthController.deleteUser);
   router.post('/user/confirm', AuthController.confirmAuth);
 
-  // App
-  router.get('/events', AppController.getEvents);
-  router.post('/events', AppController.createEvent);
-  router.delete('/events/:id', AppController.deleteEvent);
+  // Event
+  router.get('/events', EventController.getEvents);
+  router.post('/events', EventController.createEvent);
+  router.delete('/events/:id', EventController.deleteEvent);
+
+  // Review
+  router.get('/reviews', ReviewController.getReviews);
+  router.post('/reviews', ReviewController.createReview);
+  router.delete('/reviews/:id', ReviewController.deleteReview);
 
   return router;
 };
