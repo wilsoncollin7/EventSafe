@@ -34,6 +34,8 @@ body {
   border: 1px solid white;
 }
 
+/*covid safety guidelines checkbox*/
+
 #user-form, .header-wrap, #create-form, .create-user-wrap {
   padding: 20px;
   border-radius: 15px;

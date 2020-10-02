@@ -4,6 +4,7 @@ const $eventDate = $('#event-date');
 const $eventloc = $('#event-loc');
 const $eventType = $('#event-type');
 const $eventDescription = $('#event-description');
+const $eventSafety = $('#event-safety');
 const $submitBtn = $('#submit');
 const $eventList = $('#event-list');
 
@@ -76,6 +77,7 @@ const handleFormSubmit = function (event) {
     location: $eventloc.val().trim(),
     type: $eventType.val().trim(),
     description: $eventDescription.val().trim(),
+    safety: $eventSafety.val().trim(),
     UserId: window.userId
   };
 
