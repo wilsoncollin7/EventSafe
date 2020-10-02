@@ -107,7 +107,7 @@ module.exports = (db) => {
   });
 
   // Load review page and pass in an review by id
-  router.get('/review/:id', function (req, res) {
+  router.get('/reviews/:id', function (req, res) {
     if (req.isAuthenticated()) {
       db.Review.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbReview) {
         res.render('review-detail', {
