@@ -1,13 +1,13 @@
 // Get references to page elements
 const $eventText = $('#event-text');
 const $eventDate = $('#event-date');
-const $eventTime = $('#event-time');
 const $eventloc = $('#event-loc');
 const $eventType = $('#event-type');
 const $eventDescription = $('#event-description');
 const $eventSafety = $('#event-safety');
 const $submitBtn = $('#submit');
 const $eventList = $('#event-list');
+const $eventTime = $('#event-time');
 
 // The API object contains methods for each kind of request we'll make
 const API = {
@@ -71,11 +71,11 @@ const refreshEvents = function () {
 // Save the new event to the db and refresh the list
 const handleFormSubmit = function (event) {
   event.preventDefault();
-
+  console.log($eventTime.val());
+  console.log($eventDate.val());
   const events = {
     name: $eventText.val().trim(),
-    date: $eventDate.val(),
-    time: $eventTime.val(),
+    date: `${$eventDate.val()}T${$eventTime.val()}:00`,
     location: $eventloc.val().trim(),
     type: $eventType.val(),
     image: $('#event-type').find(':selected').data('img'),

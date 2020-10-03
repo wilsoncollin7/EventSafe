@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const moment = require('moment');
 
 module.exports = (db) => {
   // Load register page
@@ -86,7 +87,7 @@ module.exports = (db) => {
         res.render('event-detail', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          event: dbEvent
+          event: { ...dbEvent, date: moment().format('MMM Do YYYY , h:mm a') }
         });
       });
     } else {

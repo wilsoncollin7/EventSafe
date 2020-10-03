@@ -8,9 +8,9 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     date: {
-      type: DataTypes.DATE,
+      type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: new Date(),
+      defaultValue: 'TBD',
       validate: {
         isDate: true
       }
@@ -36,6 +36,13 @@ module.exports = function (sequelize, DataTypes) {
       allowNull: false,
       validate: {
         len: [1]
+      }
+    },
+    safety: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      valide: {
+        len: [1, 160]
       }
     }
     // need to add safety to this
