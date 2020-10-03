@@ -19,6 +19,7 @@ module.exports = (db) => {
         location: 'Raleigh, NC',
         type: 'Socially Distanced Block Party',
         description: 'Adam can\'t see this',
+        safety: 'Masks required',
         UserId: 1
       });
     });

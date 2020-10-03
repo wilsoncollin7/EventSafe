@@ -42,6 +42,8 @@ body {
   border: 1px solid white;
 }
 
+/*covid safety guidelines checkbox*/
+
 #user-form, .header-wrap, #create-form, .create-user-wrap {
   padding: 20px;
   border-radius: 15px;
@@ -100,4 +102,24 @@ hr {
 
 a {
   color: #3D405B;
+}
+
+.event-card {
+  border-color: black;
+  background-color: #F4F1DE;
+  color: black;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.event-card-title {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+  margin-top: 15px;
 }

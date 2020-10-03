@@ -32,28 +32,36 @@ module.exports = (db) => {
   });
 
   // Load dashboard page
+
   router.get('/', (req, res) => {
     if (req.isAuthenticated()) {
-      const user = {
-        user: req.session.passport.user,
-        isloggedin: req.isAuthenticated()
-      };
-      res.render('dashboard', user);
+      db.Event.findAll({ raw: true }).then(function (dbEvents) {
+        console.log(dbEvents);
+        res.render('dashboard', {
+          userInfo: req.session.passport.user,
+          isloggedin: req.isAuthenticated(),
+          msg: 'Welcome!',
+          events: dbEvents
+        });
+      });
     } else {
-      res.render('dashboard');
+      res.redirect('/');
     }
   });
-
+  //      db.Event.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbEvent) {
   // Load dashboard page
   router.get('/dashboard', (req, res) => {
     if (req.isAuthenticated()) {
-      const user = {
-        user: req.session.passport.user,
-        isloggedin: req.isAuthenticated()
-      };
-      res.render('dashboard', user);
+      db.Event.findAll({ raw: true }).then(function (dbEvents) {
+        res.render('dashboard', {
+          userInfo: req.session.passport.user,
+          isloggedin: req.isAuthenticated(),
+          msg: 'Welcome!',
+          events: dbEvents
+        });
+      });
     } else {
-      res.render('dashboard');
+      res.redirect('/');
     }
   });
 

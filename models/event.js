@@ -38,6 +38,7 @@ module.exports = function (sequelize, DataTypes) {
         len: [1]
       }
     }
+    // need to add safety to this
   });
 
   Event.associate = function (models) {

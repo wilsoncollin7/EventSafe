@@ -1,21 +1,29 @@
+
 {{> nav/nav-block}}
 
 <div id="dashboard">
   <div class="container">
     <div class="row">
-      <div class="col-8 offset-2">
-        {{#each events}}
-          <div class="card">
-            <div class="card-header">
-              <h5>{{this.text}}</h5>
+      <div class="col-lg-12">
+        <h4>Events</h4>
+        <div id="event-list" class="list-group">
+          
+          {{#each events}}
+          <div class="event-card" style="width: 24rem;">
+            <div class="event-card-title">
+              <a href="event/{{this.id}}">{{this.name}}</a>
             </div>
-            <div class="card-body" id="event-list">
+            <div class="event-card-body">
               <ul>
                 <li>{{this.description}}</li>
+                <li>{{this.location}}</li>
+                <li>{{this.date}}</li>
+                <li>{{this.type}}</li>
               </ul>
             </div>
           </div>
-        {{/each}}
+          {{/each}}
+        </div>
       </div>
     </div>
   </div>
