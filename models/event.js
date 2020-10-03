@@ -40,12 +40,32 @@ module.exports = function (sequelize, DataTypes) {
     },
     safety: {
       type: DataTypes.STRING,
-      allowNull: true,
-      valide: {
-        len: [1, 160]
-      }
+      allowNull: false
     }
-    // need to add safety to this
+    // mask: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false
+    // },
+    // sanitizer: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false
+    // },
+    // tempCheck: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false
+    // },
+    // sittingAreas: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false
+    // },
+    // capacity: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false
+    // },
+    // groundMarkings: {
+    //   type: DataTypes.BOOLEAN,
+    //   allowNull: false
+    // }
   });
 
   Event.associate = function (models) {
