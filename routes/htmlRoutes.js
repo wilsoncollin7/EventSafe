@@ -63,7 +63,7 @@ module.exports = (db) => {
         res.render('event', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          msg: 'Welcome!',
+          msg: 'Let\'s do this!',
           events: dbEvents
         });
       });
@@ -94,7 +94,7 @@ module.exports = (db) => {
         res.render('review', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          msg: 'Welcome!',
+          msg: 'Let\'s do this!',
           reviews: dbReviews
         });
       });
@@ -104,7 +104,7 @@ module.exports = (db) => {
   });
 
   // Load review page and pass in an review by id
-  router.get('/reviews/:id', function (req, res) {
+  router.get('/review/:id', function (req, res) {
     if (req.isAuthenticated()) {
       db.Review.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbReview) {
         res.render('review-detail', {

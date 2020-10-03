@@ -1,35 +1,29 @@
 {{> nav/nav-block}}
 
 <div id="dashboard">
-  <div class="container">
+  <div class="container mb-5">
     <div class="row">
       <div class="col-8 offset-2">
-        <h2 class="mt-4 text-center">Welcome to EventSafe</h2>
-        <h4 class="mt-4">Looking to finally get out of the house for some fun, but want to stay safe? We're here to help.</h4>
-        <h4 class="mt-4">EventSafe offers a public forum for communities to advertise and search for local events that are practicing COVID-19 safety measures.</h4>
+        <h2 class="mt-4 text-center">Let's Get Offline!</h2>
+        <h4 class="mt-4 text-left">Looking to finally get out of the house for some fun, but want to stay safe? We're here to help.</h4>
+        <h4 class="mt-4 text-right">EventSafe offers a public forum for communities to advertise and search for local events that are practicing COVID-19 safety measures.</h4>
       </div>
     </div>
   </div>
 
-  <div class="container">
+  <div class="container-full mt-5">
     <div class="row">
       <div class="col-8 offset-2">
-        {{#each events}}
-          <div class="card">
-            <div class="card-header">
-              <h5>{{this.text}}</h5>
-            </div>
-            <div class="card-body" id="event-list">
-              <ul>
-                <li>{{this.description}}</li>
-              </ul>
-            </div>
-          </div>
-        {{/each}}
+        <h2 class="mt-4">Safe Events Happening in Your Area</h2>
+        <div id="event-list">
+
+        </div>
       </div>
     </div>
   </div>
+
 </div>
+
 <script src="/assets/js/dashboard.js"></script>
 
 {{> modal/login-block}}

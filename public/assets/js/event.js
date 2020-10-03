@@ -4,6 +4,7 @@ const $eventDate = $('#event-date');
 const $eventloc = $('#event-loc');
 const $eventType = $('#event-type');
 const $eventDescription = $('#event-description');
+const $eventSafety = $('#event-safety');
 const $submitBtn = $('#submit');
 const $eventList = $('#event-list');
 
@@ -72,12 +73,15 @@ const handleFormSubmit = function (event) {
 
   const events = {
     name: $eventText.val().trim(),
-    date: $eventDate.val().trim(),
+    date: $eventDate.val(),
     location: $eventloc.val().trim(),
-    type: $eventType.val().trim(),
+    type: $eventType.val(),
+    image: $('#event-type').find(':selected').data('img'),
     description: $eventDescription.val().trim(),
+    safety: $eventSafety.val(),
     UserId: window.userId
   };
+  console.log(events);
 
   if (!(events.name && events.description)) {
     alert('You must enter an event text and description!');
@@ -89,6 +93,9 @@ const handleFormSubmit = function (event) {
 
   $eventText.val('');
   $eventDescription.val('');
+  $eventType.val('');
+  $eventloc.val('');
+  $eventDate.val('');
 };
 
 // handleDeleteBtnClick is called when an event's delete button is clicked
