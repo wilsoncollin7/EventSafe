@@ -68,7 +68,13 @@ body {
   height:100%;
   border-radius: .25rem;
   margin-bottom: 2%;
-  width: 600px;
+  width: 800px;
+}
+
+.container-full {
+  background: #81B29A;
+  border-radius: .25rem;
+  margin-bottom: 2%;
 }
 
 [data-useremail="true"] {
@@ -102,6 +108,16 @@ hr {
 
 a {
   color: #3D405B;
+}
+
+.event-cards {
+  background-color: #E07A5F;
+}
+
+.event-header {
+  background-color: #F4F1DE;
+  font-size: larger;
+  font-weight: bolder;
 }
 
 .event-card {

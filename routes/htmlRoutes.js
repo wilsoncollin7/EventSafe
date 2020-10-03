@@ -22,7 +22,6 @@ module.exports = (db) => {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated()
         };
-        // console.log(user);
         res.render('profile', user);
       });
     } else {
@@ -44,10 +43,10 @@ module.exports = (db) => {
         });
       });
     } else {
-      res.redirect('/');
+      res.render('dashboard');
     }
   });
-  //      db.Event.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbEvent) {
+
   // Load dashboard page
   router.get('/dashboard', (req, res) => {
     if (req.isAuthenticated()) {
@@ -69,10 +68,9 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Event.findAll({ }).then(function (dbEvents) {
         res.render('event', {
-          // needs update
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          msg: 'Welcome!',
+          msg: 'Let\'s do this!',
           events: dbEvents
         });
       });
@@ -86,7 +84,6 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Event.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbEvent) {
         res.render('event-detail', {
-          // needs update
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
           event: dbEvent
@@ -102,10 +99,9 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Review.findAll({ }).then(function (dbReviews) {
         res.render('review', {
-        // needs update
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          msg: 'Welcome!',
+          msg: 'Let\'s do this!',
           reviews: dbReviews
         });
       });
@@ -119,7 +115,6 @@ module.exports = (db) => {
     if (req.isAuthenticated()) {
       db.Review.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbReview) {
         res.render('review-detail', {
-          // needs update
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
           review: dbReview

@@ -18,18 +18,18 @@ module.exports = function (sequelize, DataTypes) {
     location: {
       type: DataTypes.STRING,
       allowNull: true,
-      defaultValue: 'NC',
+      defaultValue: 'TBD',
       validate: {
         len: [1, 160]
       }
     },
     type: {
       type: DataTypes.STRING,
-      allowNull: true,
-      defaultValue: 'partay',
-      validate: {
-        len: [1, 160]
-      }
+      allowNull: false
+    },
+    image: {
+      type: DataTypes.STRING,
+      allowNull: false
     },
     description: {
       type: DataTypes.TEXT,

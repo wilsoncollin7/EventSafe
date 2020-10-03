@@ -2,8 +2,12 @@
 {{> nav/nav-block}}
 
 <div id="dashboard">
-  <div class="container">
+  <div class="container mb-5">
     <div class="row">
+      <div class="col-8 offset-2">
+        <h2 class="mt-4 text-center">Let's Get Offline!</h2>
+        <h4 class="mt-4 text-left">Looking to finally get out of the house for some fun, but want to stay safe? We're here to help.</h4>
+        <h4 class="mt-4 text-right">EventSafe offers a public forum for communities to advertise and search for local events that are practicing COVID-19 safety measures.</h4>
       <div class="col-lg-12">
         <h4>Events</h4>
         <div id="event-list" class="list-group">
@@ -28,7 +32,20 @@
       </div>
     </div>
   </div>
+
+  {{!-- <div class="container-full mt-5">
+    <div class="row">
+      <div class="col-8 offset-2">
+        <h2 class="mt-4">Safe Events Happening in Your Area</h2>
+        <div id="event-list">
+
+        </div>
+      </div>
+    </div>
+  </div> --}}
+
 </div>
-<script src="/assets/js/dashboard.js"></script>
+
+{{!-- <script src="/assets/js/dashboard.js"></script> --}}
 
 {{> modal/login-block}}
