@@ -3,6 +3,7 @@
 // Get references to page elements
 const $eventText = $('#event-text');
 const $eventDate = $('#event-date');
+const $eventTime = $('#event-time');
 const $eventloc = $('#event-loc');
 const $eventType = $('#event-type');
 const $eventDescription = $('#event-description');
