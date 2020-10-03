@@ -1,90 +1,68 @@
-// ---------- get map function, needs coordinates of the city to search ----------
+/* eslint-disable no-multiple-empty-lines */
+/* eslint-disable no-undef */
 
-// function getMap (lat, lon) {
-//   // setting the map and myMapType variables
-//   let map;
-//   // let myMapType;
-//   // this adds the script tag to the body that activates the google map api
-//   const script = $('<script>').attr('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDwjr75wpVbrqdqfwE_Gb41DcE3T8s04wM&callback=initMap&libraries=&v=weekly&map_ids=e9ec3bf73070e70b');
-//   script.defer = true;
-//   $('#head').append(script);
-//   // here we initiate the new map, this requires the script tag that was added to the body above
-//   window.initMap = function () {
-//     // eslint-disable-next-line no-undef
-//     map = new google.maps.Map(document.getElementById('map'), {
-//       center: { lat: lat, lng: lon },
-//       // zoom item sets the zoom level of the rendering, the lower the number the closer the view port is 8 is a good level, 7 is the default
-//       zoom: 8,
-//       mapId: 'e9ec3bf73070e70b',
-//       // eslint-disable-next-line no-undef
-//       mapTypeId: google.maps.MapTypeId.TERRAIN
-//     });
+window.onload = function () {
+  // ---------- get map function, needs coordinates of the city to search ----------
+  const loc = $('#location').text();
+  let map;
+  let myMapType;
 
-//     // ----- this section adds a weather overlay that shows rain, if we want to incoperate weather api -----
-//     // eslint-disable-next-line no-undef
-//     // myMapType = new google.maps.ImageMapType({
-//     //     getTileUrl: function (coord, zoom) {
-//     //         return "https://tile.openweathermap.org/map/precipitation_new/" + zoom + "/" + coord.x + "/" + coord.y + ".png?appid=51d8d29d59553ece714298da2f3009a6";
-//     //     },
-//     //     // eslint-disable-next-line no-undef
-//     //     tileSize: new google.maps.Size(256, 256),
-//     //     maxZoom: 9,
-//     //     minZoom: 0,
-//     //     name: "mymaptype"
-//     // });
-//     // add myMapType to the inserAt function after the 0 if we want weather
-//     map.overlayMapTypes.insertAt(0);
-//   };
-// };
+  const geocode = function () {
+    $.ajax({
+      type: 'GET',
+      url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + loc + '&key=AIzaSyDwjr75wpVbrqdqfwE_Gb41DcE3T8s04wM',
+      dataType: 'json',
+      success: function (data) {
+        // console.log(data.results[0].geometry.location);
+        initMap(data.results[0].geometry.location);
+      }
+    });
+  };
 
-// getMap();
+  geocode();
 
-// let map, infoWindow;
+  const initMap = function (data) {
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: data,
+      zoom: 12,
+      mapId: 'e9ec3bf73070e70b',
+      disableDefaultUI: true
+    });
 
-// function initMap() {
-//   const script = $('<script>').attr('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDwjr75wpVbrqdqfwE_Gb41DcE3T8s04wM&callback=initMap&libraries=&v=weekly&map_ids=e9ec3bf73070e70b');
-//   script.defer = true;
-//   $('#head').append(script);
+    const marker = new google.maps.Marker({
+      position: data,
+      map: map
+    });
 
-//   // eslint-disable-next-line no-undef
-//   map = new google.maps.Map(document.getElementById('map'), {
-//     center: { lat: -34.397, lng: 150.644 },
-//     zoom: 6
-//   });
-//   // eslint-disable-next-line no-undef
-//   infoWindow = new google.maps.InfoWindow();
+    // eslint-disable-next-line no-undef
+    myMapType = new google.maps.ImageMapType({
+      getTileUrl: function (coord, zoom) {
+        return 'https://tile.openweathermap.org/map/precipitation_new/' + zoom + '/' + coord.x + '/' + coord.y + '.png?appid=51d8d29d59553ece714298da2f3009a6';
+      },
+      // eslint-disable-next-line no-undef
+      tileSize: new google.maps.Size(256, 256),
+      maxZoom: 9,
+      minZoom: 0,
+      name: 'mymaptype'
+    });
+    // add myMapType to the inserAt function after the 0 if we want weather
+    map.overlayMapTypes.insertAt(0, myMapType);
+    marker.setMap(map);
+  };
+};
 
-//   // Try HTML5 geolocation.
-//   if (navigator.geolocation) {
-//     navigator.geolocation.getCurrentPosition(
-//       (position) => {
-//         const pos = {
-//           lat: position.coords.latitude,
-//           lng: position.coords.longitude,
-//         };
-//         infoWindow.setPosition(pos);
-//         infoWindow.setContent('Location found.');
-//         infoWindow.open(map);
-//         map.setCenter(pos);
-//       },
-//       () => {
-//         handleLocationError(true, infoWindow, map.getCenter());
-//       }
-//     );
-//   } else {
-//     // Browser doesn't support Geolocation
-//     handleLocationError(false, infoWindow, map.getCenter());
-//   }
-// }
-
-// function handleLocationError(browserHasGeolocation, infoWindow, pos) {
-//   infoWindow.setPosition(pos);
-//   infoWindow.setContent(
-//     browserHasGeolocation
-//       ? 'Error: The Geolocation service failed.'
-//       : 'Error: Your browser doesnt support geolocation.'
+// ############## geo location thing ############
+// if (navigator.geolocation) {
+//   navigator.geolocation.getCurrentPosition(
+//     (position) => {
+//       lat = position.coords.latitude;
+//       lon = position.coords.longitude;
+//       console.log(lat);
+//       console.log(lon);
+//     }
 //   );
-//   infoWindow.open(map);
+// } else {
+//   console.log('error with maps');
 // }
 
-// initMap();
+// module.exports = Map;
