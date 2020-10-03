@@ -1,6 +1,7 @@
 // Get references to page elements
 const $eventText = $('#event-text');
 const $eventDate = $('#event-date');
+const $eventTime = $('#event-time');
 const $eventloc = $('#event-loc');
 const $eventType = $('#event-type');
 const $eventDescription = $('#event-description');
@@ -74,6 +75,7 @@ const handleFormSubmit = function (event) {
   const events = {
     name: $eventText.val().trim(),
     date: $eventDate.val(),
+    time: $eventTime.val(),
     location: $eventloc.val().trim(),
     type: $eventType.val(),
     image: $('#event-type').find(':selected').data('img'),
