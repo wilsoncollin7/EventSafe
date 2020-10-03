@@ -13,7 +13,6 @@ window.onload = function () {
       url: 'https://maps.googleapis.com/maps/api/geocode/json?address=' + loc + '&key=AIzaSyDwjr75wpVbrqdqfwE_Gb41DcE3T8s04wM',
       dataType: 'json',
       success: function (data) {
-        // console.log(data.results[0].geometry.location);
         initMap(data.results[0].geometry.location);
       }
     });

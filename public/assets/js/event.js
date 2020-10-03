@@ -1,3 +1,5 @@
+// const moment = require('moment');
+
 // Get references to page elements
 const $eventText = $('#event-text');
 const $eventDate = $('#event-date');
