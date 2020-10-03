@@ -33,13 +33,19 @@ body {
   /* left: -10px; */
   margin-bottom: 10px;
   height: 300px;
-  width: 330px;
+  width: 100%;
 }
 
 .btn {
   color:#F4F1DE;
   background:#3D405B;
   border: 1px solid white;
+}
+
+#loc-addon {
+  color: black;
+  background-color: #fff;
+  border: 1px solid #ced4da;
 }
 
 /*covid safety guidelines checkbox*/
