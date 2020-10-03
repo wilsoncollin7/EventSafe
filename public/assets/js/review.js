@@ -39,7 +39,7 @@ const refreshReview = function () {
     const $reviews = data.map(function (review) {
       const $a = $('<a>')
         .text(review.title)
-        .attr('href', '/reviews/' + review.id);
+        .attr('href', '/review/' + review.id);
 
       const $li = $('<li>')
         .attr({

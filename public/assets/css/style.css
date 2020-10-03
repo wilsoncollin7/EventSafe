@@ -28,6 +28,14 @@ body {
   color: black;
 }
 
+#map {
+  position: relative;
+  /* left: -10px; */
+  margin-bottom: 10px;
+  height: 300px;
+  width: 330px;
+}
+
 .btn {
   color:#F4F1DE;
   background:#3D405B;
