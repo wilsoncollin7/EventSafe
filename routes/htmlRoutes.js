@@ -1,5 +1,4 @@
 const router = require('express').Router();
-const createMap = require('../public/assets/js/map');
 
 module.exports = (db) => {
   // Load register page
@@ -92,7 +91,6 @@ module.exports = (db) => {
           isloggedin: req.isAuthenticated(),
           event: dbEvent
         });
-        createMap();
       });
     } else {
       res.redirect('/');
@@ -126,7 +124,6 @@ module.exports = (db) => {
           isloggedin: req.isAuthenticated(),
           review: dbReview
         });
-        createMap();
       });
     } else {
       res.redirect('/');
