@@ -24,12 +24,14 @@
             </div>
             <div class="event-card-body">
               <ul>
-                <li>{{this.description}}</li>
-                <li>{{this.location}}</li>
                 <li>{{this.date}}</li>
                 <li>{{this.time}}</li>
+                <li>{{this.location}}</li>
                 <li>{{this.type}}</li>
               </ul>
+                <div class="description-card-body">
+                  {{this.description}}
+                </div>
             </div>
           </div>
           {{/each}}

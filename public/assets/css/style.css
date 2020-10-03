@@ -133,6 +133,8 @@ a {
 
 .event-card-title {
   text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
 h1 {
@@ -150,4 +152,12 @@ h1 {
   width: 800px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.description-card-body {
+  background: lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding: 5px;
 }
