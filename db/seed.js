@@ -17,8 +17,9 @@ module.exports = (db) => {
         name: 'Sample Event',
         date: '10/31/2020',
         location: 'Raleigh, NC',
-        type: 'Socially Distanced Block Party',
-        description: 'Adam can\'t see this',
+        type: 'Movie',
+        image: 'movie.jpg',
+        description: 'partay partay partay',
         safety: 'Masks required',
         UserId: 1
       });

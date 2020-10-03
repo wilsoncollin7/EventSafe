@@ -74,7 +74,13 @@ body {
   height:100%;
   border-radius: .25rem;
   margin-bottom: 2%;
-  width: 600px;
+  width: 800px;
+}
+
+.container-full {
+  background: #81B29A;
+  border-radius: .25rem;
+  margin-bottom: 2%;
 }
 
 [data-useremail="true"] {
@@ -110,6 +116,16 @@ a {
   color: #3D405B;
 }
 
+.event-cards {
+  background-color: #E07A5F;
+}
+
+.event-header {
+  background-color: #F4F1DE;
+  font-size: larger;
+  font-weight: bolder;
+}
+
 .event-card {
   border-color: black;
   background-color: #F4F1DE;
@@ -123,9 +139,31 @@ a {
 
 .event-card-title {
   text-align: center;
+  font-weight: bold;
+  margin-bottom: 5px;
 }
 
-h4 {
+h1 {
   text-align: center;
   margin-top: 15px;
+}
+
+.event-container {
+  margin-top: 2%;
+  padding-bottom: 2%;
+  background: #81B29A;
+  height:100%;
+  border-radius: .25rem;
+  margin-bottom: 2%;
+  width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.description-card-body {
+  background: lightgrey;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+  padding: 5px;
 }
