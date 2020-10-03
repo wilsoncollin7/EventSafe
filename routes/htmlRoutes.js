@@ -22,7 +22,6 @@ module.exports = (db) => {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated()
         };
-        // console.log(user);
         res.render('profile', user);
       });
     } else {
@@ -44,10 +43,10 @@ module.exports = (db) => {
         });
       });
     } else {
-      res.redirect('/');
+      res.render('dashboard');
     }
   });
-  //      db.Event.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbEvent) {
+
   // Load dashboard page
   router.get('/dashboard', (req, res) => {
     if (req.isAuthenticated()) {
