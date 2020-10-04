@@ -42,30 +42,6 @@ module.exports = function (sequelize, DataTypes) {
       type: DataTypes.STRING,
       allowNull: false
     }
-    // mask: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: false
-    // },
-    // sanitizer: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: false
-    // },
-    // tempCheck: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: false
-    // },
-    // sittingAreas: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: false
-    // },
-    // capacity: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: false
-    // },
-    // groundMarkings: {
-    //   type: DataTypes.BOOLEAN,
-    //   allowNull: false
-    // }
   });
 
   Event.associate = function (models) {

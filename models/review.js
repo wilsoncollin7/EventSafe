@@ -40,13 +40,5 @@ module.exports = function (sequelize, DataTypes) {
     });
   };
 
-  Review.associate = function (models) {
-    Review.belongsTo(models.Business, {
-      foreignKey: {
-        allowNull: true
-      }
-    });
-  };
-
   return Review;
 };
