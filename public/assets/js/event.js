@@ -7,7 +7,7 @@ const $eventTime = $('#event-time');
 const $eventloc = $('#event-loc');
 const $eventType = $('#event-type');
 const $eventDescription = $('#event-description');
-const $eventSafety = $('input:checked');
+const $eventSafety = $("input[type='checkbox']");
 const $submitBtn = $('#submit');
 const $eventList = $('#event-list');
 
@@ -73,6 +73,16 @@ const refreshEvents = function () {
 // Save the new event to the db and refresh the list
 const handleFormSubmit = function (event) {
   event.preventDefault();
+  const safetyItems = [];
+  console.log($eventSafety);
+
+  for (let i = 0; i < $eventSafety.length; i++) {
+    if ($eventSafety[i].checked) {
+      safetyItems.push($eventSafety[i].value);
+    }
+  }
+
+  console.log(safetyItems);
 
   const events = {
     name: $eventText.val().trim(),
@@ -81,7 +91,7 @@ const handleFormSubmit = function (event) {
     type: $eventType.val(),
     image: $('#event-type').find(':selected').data('img'),
     description: $eventDescription.val().trim(),
-    safety: $eventSafety.length().toString(),
+    safety: safetyItems.join(' | '),
     UserId: window.userId
   };
   console.log(events);

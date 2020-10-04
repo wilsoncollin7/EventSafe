@@ -5,19 +5,16 @@
     <div class="col-8 offset-2">
       <div class="card mt-4">
         <div class="card-body">
-          <h5 class="card-title">Review</h5>
-          <p>
-            <strong>ID</strong>: {{review.id}}</p>
-          <p>
-            <strong>Title</strong>: {{review.title}}</p>
+          <h5 class="card-title">Business Review</h5>
+            <strong>Business</strong>: {{review.title}}</p>
           <p>
             <strong>Location</strong>: <a id="location">{{review.location}}</a></p> 
           <p>
             <strong>Type</strong>: {{review.type}}</p> 
           <p>
-            <strong>Description:</strong> {{review.description}}</p>
+            <strong>Review:</strong> {{review.description}}</p>
           <div id="map"></div>
-            <a href="/dashboard">← Back To Home</a>
+            <button type="button" class="btn" href="/dashboard">← Back To Home</button>
         </div>
       </div>
     </div>
