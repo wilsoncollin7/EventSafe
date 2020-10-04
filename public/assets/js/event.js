@@ -74,15 +74,12 @@ const refreshEvents = function () {
 const handleFormSubmit = function (event) {
   event.preventDefault();
   const safetyItems = [];
-  console.log($eventSafety);
 
   for (let i = 0; i < $eventSafety.length; i++) {
     if ($eventSafety[i].checked) {
       safetyItems.push($eventSafety[i].value);
     }
   }
-
-  console.log(safetyItems);
 
   const events = {
     name: $eventText.val().trim(),
@@ -94,7 +91,6 @@ const handleFormSubmit = function (event) {
     safety: safetyItems.join(' | '),
     UserId: window.userId
   };
-  console.log(events);
 
   if (!(events.name && events.description)) {
     alert('You must enter an event text and description!');
