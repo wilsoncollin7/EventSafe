@@ -40,12 +40,8 @@ module.exports = function (sequelize, DataTypes) {
     },
     safety: {
       type: DataTypes.STRING,
-      allowNull: true,
-      valide: {
-        len: [1, 160]
-      }
+      allowNull: false
     }
-    // need to add safety to this
   });
 
   Event.associate = function (models) {

@@ -31,16 +31,16 @@ module.exports = (db) => {
   });
 
   // Load dashboard page
-
   router.get('/', (req, res) => {
     if (req.isAuthenticated()) {
       db.Event.findAll({ raw: true }).then(function (dbEvents) {
-        console.log(dbEvents);
-        res.render('dashboard', {
-          userInfo: req.session.passport.user,
-          isloggedin: req.isAuthenticated(),
-          msg: 'Welcome!',
-          events: dbEvents
+        db.Review.findAll({ raw: true }).then(function (dbReviews) {
+          res.render('dashboard', {
+            userInfo: req.session.passport.user,
+            isloggedin: req.isAuthenticated(),
+            events: dbEvents,
+            reviews: dbReviews
+          });
         });
       });
     } else {
@@ -52,11 +52,13 @@ module.exports = (db) => {
   router.get('/dashboard', (req, res) => {
     if (req.isAuthenticated()) {
       db.Event.findAll({ raw: true }).then(function (dbEvents) {
-        res.render('dashboard', {
-          userInfo: req.session.passport.user,
-          isloggedin: req.isAuthenticated(),
-          msg: 'Welcome!',
-          events: dbEvents
+        db.Review.findAll({ raw: true }).then(function (dbReviews) {
+          res.render('dashboard', {
+            userInfo: req.session.passport.user,
+            isloggedin: req.isAuthenticated(),
+            events: dbEvents,
+            reviews: dbReviews
+          });
         });
       });
     } else {
@@ -80,14 +82,14 @@ module.exports = (db) => {
     }
   });
 
-  // Load example page and pass in an example by id
+  // Load event page and pass in an event by id
   router.get('/event/:id', function (req, res) {
     if (req.isAuthenticated()) {
       db.Event.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbEvent) {
         res.render('event-detail', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          event: { ...dbEvent, date: moment().format('MMM Do YYYY , h:mm a') }
+          event: { ...dbEvent, date: moment(dbEvent.date).format('MMM Do YYYY , h:mm a') }
         });
       });
     } else {
