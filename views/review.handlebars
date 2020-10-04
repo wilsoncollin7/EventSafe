@@ -4,11 +4,11 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h2 class="mt-4">{{msg}}</h2>
+        <h2 class="mt-4 text-center">{{msg}}</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
-            <label for="review-title">Review Title</label>
-            <input type="text" id="review-title" class="form-control" aria-describedby="review-title" placeholder="What will you call your review?">
+            <label for="review-title">Business</label>
+            <input type="text" id="review-title" class="form-control" aria-describedby="review-title" placeholder="What business did you recently visit?">
           </div>
           <div class="form-group">
             <label for="review-loc">Location</label>
@@ -22,16 +22,16 @@
           <div class="form-group">
             <label for="event-type">Type</label>
             <select name="type" class="form-control" id="review-type">
-              <option value="restaurant">Restaurant</option>
-              <option value="grocery store">Grocery Store</option>
-              <option value="department store">Department Store</option>
-              <option value="doctor office">Doctor Office</option>
-              <option value="other">Other</option>
+              <option value="Restaurant">Restaurant</option>
+              <option value="Grocery Store">Grocery Store</option>
+              <option value="Department Store">Department Store</option>
+              <option value="Doctor Office">Doctor Office</option>
+              <option value="Other">Other</option>
             </select>
           </div>
           <div class="form-group">
-            <label for="review-description">Description</label>
-            <textarea class="form-control" id="review-description" aria-describedby="review-description" placeholder="Description"></textarea>
+            <label for="review-description">Review</label>
+            <textarea class="form-control" id="review-description" aria-describedby="review-description" placeholder="Your review of their COVID-19 Safety practices"></textarea>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>

@@ -1,13 +1,15 @@
+// const moment = require('moment');
+
 // Get references to page elements
 const $eventText = $('#event-text');
 const $eventDate = $('#event-date');
+const $eventTime = $('#event-time');
 const $eventloc = $('#event-loc');
 const $eventType = $('#event-type');
 const $eventDescription = $('#event-description');
-const $eventSafety = $('#event-safety');
+const $eventSafety = $("input[type='checkbox']");
 const $submitBtn = $('#submit');
 const $eventList = $('#event-list');
-const $eventTime = $('#event-time');
 
 // The API object contains methods for each kind of request we'll make
 const API = {
@@ -71,8 +73,14 @@ const refreshEvents = function () {
 // Save the new event to the db and refresh the list
 const handleFormSubmit = function (event) {
   event.preventDefault();
-  console.log($eventTime.val());
-  console.log($eventDate.val());
+  const safetyItems = [];
+
+  for (let i = 0; i < $eventSafety.length; i++) {
+    if ($eventSafety[i].checked) {
+      safetyItems.push($eventSafety[i].value);
+    }
+  }
+
   const events = {
     name: $eventText.val().trim(),
     date: `${$eventDate.val()}T${$eventTime.val()}:00`,
@@ -80,10 +88,9 @@ const handleFormSubmit = function (event) {
     type: $eventType.val(),
     image: $('#event-type').find(':selected').data('img'),
     description: $eventDescription.val().trim(),
-    safety: $eventSafety.val(),
+    safety: safetyItems.join(' | '),
     UserId: window.userId
   };
-  console.log(events);
 
   if (!(events.name && events.description)) {
     alert('You must enter an event text and description!');
