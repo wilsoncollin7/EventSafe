@@ -42,6 +42,7 @@ module.exports = (db) => {
           for (let i = 0; i < dbReviews.length; i++) {
             dbReviews[i].createdAt = moment(dbReviews[i].createdAt).format('MMM Do YYYY, h:mm a');
           }
+          console.log(dbEvents);
           res.render('dashboard', {
             userInfo: req.session.passport.user,
             isloggedin: req.isAuthenticated(),
