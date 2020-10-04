@@ -87,7 +87,7 @@ module.exports = (db) => {
         res.render('event-detail', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          event: { ...dbEvent, date: moment().format('MMM Do YYYY , h:mm a') }
+          event: { ...dbEvent, date: moment(dbEvent.date).format('MMM Do YYYY , h:mm a') }
         });
       });
     } else {
@@ -118,7 +118,7 @@ module.exports = (db) => {
         res.render('review-detail', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          review: dbReview
+          review: { ...dbReview, date: moment(dbReview).format('MMM Do YYYY , h:mm a') }
         });
       });
     } else {

@@ -5,6 +5,10 @@ const $reviewLocation = $('#review-loc');
 const $reviewType = $('#review-type');
 const $submitBtn = $('#submit');
 const $reviewList = $('#review-list');
+// need to add variables similar to events to get the date to populate
+// made changes to htmlRoutes to pull dbReview and moment stuff
+// need to add ` to date section of line 76 or so in reviews variable
+// play around to try and get the dashboards to populate the correct date
 
 // The API object contains methods for each kind of request we'll make
 const API = {
