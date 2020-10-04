@@ -23,7 +23,7 @@
           {{#each events}}
           <div class="event-card col-lg-10">
             <div class="event-card-title card-header">
-              <button type="button" class="dashboard-headers btn btn-lg" href="event/{{this.id}}">{{this.name}}</button>
+              <a  href="event/{{this.id}}"><button type="button" class="dashboard-headers btn btn-lg">{{this.name}}</button></a>
             </div>
             <img class="card-img-top" src="/assets/images/{{this.image}}" alt="Card image cap">
             <div class="event-card-body">
@@ -56,7 +56,7 @@
           {{#each reviews}}
           <div class="event-card col-lg-10">
             <div class="event-card-title card-header">
-              <button type="button" class="dashboard-headers btn btn-lg" href="review/{{this.id}}">{{this.title}}</button>
+              <a  href="review/{{this.id}}"><button type="button" class="dashboard-headers btn btn-lg">{{this.title}}</button></a>
             </div>
             <div class="event-card-body">
                <p>
