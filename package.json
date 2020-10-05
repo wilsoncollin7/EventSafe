@@ -1,5 +1,5 @@
 {
-  "name": "project2-starter-auth",
+  "name": "project2",
   "version": "1.5.0",
   "description": "Project2 Starter with Express, Handlebars, Sequelize, and Authentication with Passport.",
   "main": "server.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alperg/project2-starter-auth.git"
+    "url": "https://github.com/wilsoncollin7/project-2"
   },
   "engines": {
     "npm": "5.7.1",
@@ -21,7 +21,7 @@
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/alperg/project2-starter-auth/issues"
+    "url": "https://github.com/wilsoncollin7/project-2/issues"
   },
   "standard": {
     "globals": [
@@ -35,7 +35,7 @@
       "expect"
     ]
   },
-  "homepage": "https://github.com/alperg/project2-starter-auth#readme",
+  "homepage": "https://github.com/wilsoncollin7/project-2#project-2",
   "dependencies": {
     "bcrypt": "^5.0.0",
     "connect-session-sequelize": "^7.0.3",
