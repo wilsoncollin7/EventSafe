@@ -25,7 +25,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: true,
+      allowNull: false,
       validate: {
         len: [1]
       }
@@ -36,14 +36,6 @@ module.exports = function (sequelize, DataTypes) {
     Review.belongsTo(models.User, {
       foreignKey: {
         allowNull: false
-      }
-    });
-  };
-
-  Review.associate = function (models) {
-    Review.belongsTo(models.Business, {
-      foreignKey: {
-        allowNull: true
       }
     });
   };

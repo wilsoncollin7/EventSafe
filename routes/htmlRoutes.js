@@ -31,16 +31,24 @@ module.exports = (db) => {
   });
 
   // Load dashboard page
-
   router.get('/', (req, res) => {
     if (req.isAuthenticated()) {
-      db.Event.findAll({ raw: true }).then(function (dbEvents) {
-        console.log(dbEvents);
-        res.render('dashboard', {
-          userInfo: req.session.passport.user,
-          isloggedin: req.isAuthenticated(),
-          msg: 'Welcome!',
-          events: dbEvents
+      db.Event.findAll({ include: [db.User], raw: true }).then(function (dbEvents) {
+        db.Review.findAll({ include: [db.User], raw: true }).then(function (dbReviews) {
+          for (let i = 0; i < dbEvents.length; i++) {
+            dbEvents[i].date = moment(dbEvents[i].date).format('MMM Do YYYY, h:mm a');
+            dbEvents[i].createdAt = moment(dbEvents[i].createdAt).format('MMM Do YYYY, h:mm a');
+          }
+          for (let i = 0; i < dbReviews.length; i++) {
+            dbReviews[i].createdAt = moment(dbReviews[i].createdAt).format('MMM Do YYYY, h:mm a');
+          }
+          console.log(dbEvents);
+          res.render('dashboard', {
+            userInfo: req.session.passport.user,
+            isloggedin: req.isAuthenticated(),
+            events: dbEvents,
+            reviews: dbReviews
+          });
         });
       });
     } else {
@@ -51,12 +59,21 @@ module.exports = (db) => {
   // Load dashboard page
   router.get('/dashboard', (req, res) => {
     if (req.isAuthenticated()) {
-      db.Event.findAll({ raw: true }).then(function (dbEvents) {
-        res.render('dashboard', {
-          userInfo: req.session.passport.user,
-          isloggedin: req.isAuthenticated(),
-          msg: 'Welcome!',
-          events: dbEvents
+      db.Event.findAll({ include: [db.User], raw: true }).then(function (dbEvents) {
+        db.Review.findAll({ include: [db.User], raw: true }).then(function (dbReviews) {
+          for (let i = 0; i < dbEvents.length; i++) {
+            dbEvents[i].date = moment(dbEvents[i].date).format('MMM Do YYYY, h:mm a');
+            dbEvents[i].createdAt = moment(dbEvents[i].createdAt).format('MMM Do YYYY, h:mm a');
+          }
+          for (let i = 0; i < dbReviews.length; i++) {
+            dbReviews[i].createdAt = moment(dbReviews[i].createdAt).format('MMM Do YYYY, h:mm a');
+          }
+          res.render('dashboard', {
+            userInfo: req.session.passport.user,
+            isloggedin: req.isAuthenticated(),
+            events: dbEvents,
+            reviews: dbReviews
+          });
         });
       });
     } else {
@@ -67,7 +84,7 @@ module.exports = (db) => {
   // Load event index page
   router.get('/event', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Event.findAll({ }).then(function (dbEvents) {
+      db.Event.findAll({ where: { UserId: req.session.passport.user.id }, raw: true }).then(function (dbEvents) {
         res.render('event', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
@@ -80,14 +97,14 @@ module.exports = (db) => {
     }
   });
 
-  // Load example page and pass in an example by id
+  // Load event page and pass in an event by id
   router.get('/event/:id', function (req, res) {
     if (req.isAuthenticated()) {
       db.Event.findOne({ where: { id: req.params.id }, raw: true }).then(function (dbEvent) {
         res.render('event-detail', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          event: { ...dbEvent, date: moment(dbEvent.date).format('MMM Do YYYY , h:mm a') }
+          event: { ...dbEvent, date: moment(dbEvent.date).format('MMM Do YYYY, h:mm a') }
         });
       });
     } else {
@@ -98,7 +115,7 @@ module.exports = (db) => {
   // Load review index page
   router.get('/review', function (req, res) {
     if (req.isAuthenticated()) {
-      db.Review.findAll({ }).then(function (dbReviews) {
+      db.Review.findAll({ where: { UserId: req.session.passport.user.id }, raw: true }).then(function (dbReviews) {
         res.render('review', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),

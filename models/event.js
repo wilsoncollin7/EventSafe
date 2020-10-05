@@ -25,11 +25,13 @@ module.exports = function (sequelize, DataTypes) {
     },
     type: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
+      defaultValue: 'Other'
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
+      defaultValue: 'festival.jpg'
     },
     description: {
       type: DataTypes.TEXT,
@@ -40,12 +42,8 @@ module.exports = function (sequelize, DataTypes) {
     },
     safety: {
       type: DataTypes.STRING,
-      allowNull: true,
-      valide: {
-        len: [1, 160]
-      }
+      allowNull: false
     }
-    // need to add safety to this
   });
 
   Event.associate = function (models) {

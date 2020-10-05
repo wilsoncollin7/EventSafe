@@ -1,3 +1,4 @@
+/* All */
 body {
   color: #F2CC8F;
   background-size: cover;
@@ -6,11 +7,14 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+/* Nav */
 .navbar {
   background-color: #E07A5F !important;
 }
+
 .nav-link {
   color: #3D405B !important;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   font-size: larger;
 }
 
@@ -19,6 +23,7 @@ body {
   font-size: 30px;
   font-weight: bolder;
 }
+
 
 .jumbotron {
   background: rgba(0,0,0,0);
@@ -74,7 +79,7 @@ body {
   height:100%;
   border-radius: .25rem;
   margin-bottom: 2%;
-  width: 800px;
+  width: 1000px;
 }
 
 .container-full {
@@ -107,6 +112,12 @@ hr {
   line-height: 2.5;
 }
 
+/* Dashboard */
+.dashboard-top {
+  font-size: 36px;
+  font-weight: 1000;
+}
+
 .card-body {
   color: #3D405B;
   background-color: #F4F1DE;
@@ -114,16 +125,6 @@ hr {
 
 a {
   color: #3D405B;
-}
-
-.event-cards {
-  background-color: #E07A5F;
-}
-
-.event-header {
-  background-color: #F4F1DE;
-  font-size: larger;
-  font-weight: bolder;
 }
 
 .event-card {
@@ -135,12 +136,17 @@ a {
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
+  width: 700px;
 }
 
 .event-card-title {
   text-align: center;
-  font-weight: bold;
+  font-weight: 900;
   margin-bottom: 5px;
+  font-size: 24px;
+}
+.dashboard-headers {
+  color: #E07A5F !important;
 }
 
 h1 {
@@ -158,12 +164,4 @@ h1 {
   width: 800px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.description-card-body {
-  background: lightgrey;
-  margin-left: auto;
-  margin-right: auto;
-  position: relative;
-  padding: 5px;
 }

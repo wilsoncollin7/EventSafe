@@ -8,7 +8,6 @@ module.exports = function (db) {
     },
     // Create a new example
     createReview: function (req, res) {
-      console.log('made it to the creat review: ' + req.body);
       db.Review.create(req.body).then(function (dbReview) {
         res.json(dbReview);
       });

@@ -4,7 +4,7 @@
   <div class="container">
     <div class="row">
       <div class="col-8 offset-2">
-        <h2 class="mt-4">{{msg}}</h2>
+        <h2 class="mt-4 text-center">{{msg}}</h2>
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="event-text">Event Name</label>
@@ -27,16 +27,17 @@
               </div>
             </div>
           </div>
+          {{!-- Type Form --}}
           <div class="form-group">
             <label for="event-type">Type</label>
             <select name="type" class="form-control" id="event-type">
               <option data-img="movie.jpg" value="Movie">Movie</option>
               <option data-img="sports.jpg" value="Sports">Sports</option>
               <option data-img="charity.jpg" value="Fundraiser">Fundraiser</option>
-              <option data-img="food-truck.jpg" value="Food">Food &amp; Beverage</option>
+              <option data-img="food-truck.jpg" value="Food & Beverage">Food &amp; Beverage</option>
               <option data-img="festival.jpg" value="Festival">Festival</option>
-              <option data-img="art-show.jpg" value="Arts">Arts &amp; Crafts</option>
-              <option data-img="yoga.jpg" value="Exercise">Group Exercise/Dance</option>
+              <option data-img="art-show.jpg" value="Arts & Crafts">Arts &amp; Crafts</option>
+              <option data-img="yoga.jpg" value="Group Exercise/Dance">Group Exercise/Dance</option>
               <option data-img="trivia.jpg" value="Trivia">Trivia</option>
               <option data-img="music.jpg" value="Music">Music</option>
               <option data-img="walk.jpg" value="Walk">Walk</option>
@@ -47,28 +48,29 @@
             <label for="event-description">Description</label>
             <textarea class="form-control" id="event-description" aria-describedby="event-description" placeholder="Tell us about it!"></textarea>
           </div>
+          {{!-- Safety Form --}}
           <div class="form-group">
             <label for="event-safety">COVID Safety Guidelines</label>
           </div>
           <div class="card">
             <div class="card-body">
               <div class="form-check">
-                <input type="checkbox" id="event-safety1" class="form-check-input" aria-describedby="event-text" placeholder="Safety Guidelines"> Masks Required
+                <input type="checkbox" id="event-safety1" class="form-check-input" aria-describedby="event-text" value="Masks Required" name="safety"> Masks Required
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety2" class="form-check-input" aria-describedby="event-text" placeholder="Safety Guidelines"> Hand Sanitizer stations
+                <input type="checkbox" id="event-safety2" class="form-check-input" aria-describedby="event-text" value="Hand Sanitizer Stations" name="safety"> Hand Sanitizer stations
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety3" class="form-check-input" aria-describedby="event-text" placeholder="Safety Guidelines"> Temperature Checks
+                <input type="checkbox" id="event-safety3" class="form-check-input" aria-describedby="event-text" value="Temperature Checks" name="safety"> Temperature Checks
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety4" class="form-check-input" aria-describedby="event-text" placeholder="Safety Guidelines"> Sitting areas are 6 feet apart
+                <input type="checkbox" id="event-safety4" class="form-check-input" aria-describedby="event-text" value="Sitting Areas 6ft Apart" name="safety"> Sitting areas are 6 feet apart
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety5" class="form-check-input" aria-describedby="event-text" placeholder="Safety Guidelines"> Capactiy limits
+                <input type="checkbox" id="event-safety5" class="form-check-input" aria-describedby="event-text" value="Capacity Limits" name="safety"> Capactiy limits
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety6" class="form-check-input" aria-describedby="event-text" placeholder="Safety Guidelines"> 6 Feet Apart ground markings
+                <input type="checkbox" id="event-safety6" class="form-check-input" aria-describedby="event-text" value="Ground Markings for 6ft" name="safety"> 6 Feet Apart ground markings
               </div>
             </div>
           </div>
