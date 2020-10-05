@@ -20,7 +20,7 @@ module.exports = (db) => {
         type: 'Movie',
         image: 'movie.jpg',
         description: 'partay partay partay',
-        safety: 'Masks required',
+        safety: 'Masks Required',
         UserId: 1
       });
     });

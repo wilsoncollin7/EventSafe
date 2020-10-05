@@ -25,11 +25,13 @@ module.exports = function (sequelize, DataTypes) {
     },
     type: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
+      defaultValue: 'Other'
     },
     image: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: true,
+      defaultValue: 'festival.jpg'
     },
     description: {
       type: DataTypes.TEXT,

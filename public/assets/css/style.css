@@ -1,3 +1,4 @@
+/* All */
 body {
   color: #F2CC8F;
   background-size: cover;
@@ -6,6 +7,7 @@ body {
   font-family: 'Noto Sans JP', sans-serif;
 }
 
+/* Nav */
 .navbar {
   background-color: #E07A5F !important;
 }
@@ -21,6 +23,7 @@ body {
   font-size: 30px;
   font-weight: bolder;
 }
+
 
 .jumbotron {
   background: rgba(0,0,0,0);
@@ -109,6 +112,7 @@ hr {
   line-height: 2.5;
 }
 
+/* Dashboard */
 .dashboard-top {
   font-size: 36px;
   font-weight: 1000;
