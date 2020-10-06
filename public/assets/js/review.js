@@ -1,14 +1,12 @@
 // Get references to page elements
 const $reviewTitle = $('#review-title');
 const $reviewDescription = $('#review-description');
+const $reviewDate = $('review-date');
+const $reviewTime = $('review-time');
 const $reviewLocation = $('#review-loc');
 const $reviewType = $('#review-type');
 const $submitBtn = $('#submit');
 const $reviewList = $('#review-list');
-// need to add variables similar to events to get the date to populate
-// made changes to htmlRoutes to pull dbReview and moment stuff
-// need to add ` to date section of line 76 or so in reviews variable
-// play around to try and get the dashboards to populate the correct date
 
 // The API object contains methods for each kind of request we'll make
 const API = {
@@ -75,6 +73,7 @@ const handleFormSubmit = function (review) {
 
   const reviews = {
     title: $reviewTitle.val().trim(),
+    date: `${$reviewDate.val()}T${$reviewTime.val()}:00`,
     location: $reviewLocation.val().trim(),
     type: $reviewType.val().trim(),
     description: $reviewDescription.val().trim(),
@@ -91,6 +90,11 @@ const handleFormSubmit = function (review) {
 
   $reviewTitle.val('');
   $reviewDescription.val('');
+  $reviewDate.val('');
+  // need to determine if these are needed
+  // $reviewType.val('');
+  // $reviewTime.val('');
+  // $reviewLocation.val('');
 };
 
 // handleDeleteBtnClick is called when an review's delete button is clicked
