@@ -13,7 +13,7 @@
 
 ## General Info
 
-An application that allows users to see local events that follow COVID-19 precautions, and allows users to post reviews of local businesses regarding their COVID-19 safety practices. When registered and signed in, the user can create events, as well as write reviews about events. All events are published to the dashboard, where the user can see a brief overview of each event, as well as click on the event name to see additional details.
+An application that allows users to see local events that follow COVID-19 precautions, and allows users to post reviews of local businesses regarding their COVID-19 safety practices. When registered and signed in, the user can create events, as well as write reviews about local businesses. All events and reviews are published to the dashboard, where the user can see a brief overview of each event, as well as click on the event name to see additional details.
 
 ## Technologies
 
@@ -28,19 +28,19 @@ An application that allows users to see local events that follow COVID-19 precau
 ## Features
 
 * Allows users to create events and add the event type, location, and COVID-19 precautions, in addition to the name, description, and date
-* Includes a review page where event attendees can review the events that they have attended
-* Features a dashboard that displays all upcoming events and a summary of those events
+* Includes a review page where event attendees can review local businesses
+* Features a dashboard that displays all upcoming events and a summary of those events, as well as reviews
 * Provides users with the ability to update their account information
 
 ## How to Use
 
-* To view events, navigate to the Home page. Once on the home page, click on the name of the event that you are interested in. Upon clicking on the event, you will be able to see all of the event details, including a map with the location. To return to the Home page, scroll to the bottom of the event details and click on the Back To Home button.
+* To view events and reviews, you must first register for an account by clicking on the Register button in the upper righthand corner of the page. After filling out all of the required information, click on the Login button and enter your username and password. After doing so, navigate to the Home page. Once on the home page, click on the name of the event that you are interested in. Upon clicking on the event, you will be able to see all of the event details, including a map with the location. To return to the Home page, scroll to the bottom of the event details and click on the Back To Home button.
 
-* To create an event, first register for an account by clicking on the Register button in the upper righthand corner of the page. After filling out all of the required information, click on the Login button and enter your username and password. Once logged in, you will be able to create an event by clicking on the My Events button. On that page you will need to at very least enter the event name and description. There are also optional fields, which include date, time, location, type, and COVID-19 safety guidelines. Upon filling out the desired fields, click on the submit button. Your event will now be visible at the bottom of the My Events page and will also appear on the Home page.
+* To create an event, register for an account and then log in to your account. Once logged in, you will be able to create an event by clicking on the My Events button. On that page you will need to at very least enter the event name and description. There are also optional fields, which include date, time, location, type, and COVID-19 safety guidelines. Upon filling out the desired fields, click on the submit button. Your event will now be visible at the bottom of the My Events page and will also appear on the Home page.
 
 * To delete an event, you will need to log into the account under which your event has been published. After logging in, navigate to the My Events page. At the bottom the page all events that you have created under that account will be listed under "Events belonging to you:". Click on the X to the right of the name of the event that you would like to delete. After doing so, the event will be removed from the My Events page, as well as the Home page.
 
-* To review an event, log into your account, then click on the My Reviews button. Once there, you will be required to enter the business name and fill out the Review field. You will also have the option to enter the location and business type. After completing your review, click Submit. Once submitted, your review will appear at the bottom of the My Reviews page.
+* To review a business, log into your account, then click on the My Reviews button. Once there, you will be required to enter the business name and fill out the Review field. You will also have the option to enter the location and business type. After completing your review, click Submit. Once submitted, your review will appear at the bottom of the My Reviews page.
 
 * To delete a review, log into the account under which the review was posted. Once logged in, navigate to the My Reviews page and scroll to the bottom of the page. Under "Reviews that belong to this user:" will be a list of all the reviews that you have posted. Click on the X to the right of the name of the review that you would like to delete. Doing so will remove the review from your My Reviews page.
 
