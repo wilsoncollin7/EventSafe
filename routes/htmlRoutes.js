@@ -36,13 +36,16 @@ module.exports = (db) => {
       db.Event.findAll({ include: [db.User], raw: true }).then(function (dbEvents) {
         db.Review.findAll({ include: [db.User], raw: true }).then(function (dbReviews) {
           for (let i = 0; i < dbEvents.length; i++) {
+            dbEvents[i].postedBy = dbEvents[i]['User.firstName'] + ' ' + dbEvents[i]['User.lastName'];
             dbEvents[i].date = moment(dbEvents[i].date).format('MMM Do YYYY, h:mm a');
             dbEvents[i].createdAt = moment(dbEvents[i].createdAt).format('MMM Do YYYY, h:mm a');
           }
           for (let i = 0; i < dbReviews.length; i++) {
+            dbReviews[i].postedBy = dbReviews[i]['User.firstName'] + ' ' + dbReviews[i]['User.lastName'];
             dbReviews[i].createdAt = moment(dbReviews[i].createdAt).format('MMM Do YYYY, h:mm a');
           }
-          console.log(dbEvents);
+          // console.log(dbEvents);
+          // console.log(dbReviews);
           res.render('dashboard', {
             userInfo: req.session.passport.user,
             isloggedin: req.isAuthenticated(),
@@ -62,10 +65,12 @@ module.exports = (db) => {
       db.Event.findAll({ include: [db.User], raw: true }).then(function (dbEvents) {
         db.Review.findAll({ include: [db.User], raw: true }).then(function (dbReviews) {
           for (let i = 0; i < dbEvents.length; i++) {
+            dbEvents[i].postedBy = dbEvents[i]['User.firstName'] + ' ' + dbEvents[i]['User.lastName'];
             dbEvents[i].date = moment(dbEvents[i].date).format('MMM Do YYYY, h:mm a');
             dbEvents[i].createdAt = moment(dbEvents[i].createdAt).format('MMM Do YYYY, h:mm a');
           }
           for (let i = 0; i < dbReviews.length; i++) {
+            dbReviews[i].postedBy = dbReviews[i]['User.firstName'] + ' ' + dbReviews[i]['User.lastName'];
             dbReviews[i].createdAt = moment(dbReviews[i].createdAt).format('MMM Do YYYY, h:mm a');
           }
           res.render('dashboard', {
@@ -83,8 +88,10 @@ module.exports = (db) => {
 
   // Load event index page
   router.get('/event', function (req, res) {
+    console.log(req.session.passport.user.id);
     if (req.isAuthenticated()) {
       db.Event.findAll({ where: { UserId: req.session.passport.user.id }, raw: true }).then(function (dbEvents) {
+        console.log(dbEvents);
         res.render('event', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),

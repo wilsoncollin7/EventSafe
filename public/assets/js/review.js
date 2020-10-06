@@ -103,5 +103,3 @@ const handleDeleteBtnClick = function () {
 $submitBtn.on('click', handleFormSubmit);
 
 $reviewList.on('click', '.delete', handleDeleteBtnClick);
-
-refreshReview();

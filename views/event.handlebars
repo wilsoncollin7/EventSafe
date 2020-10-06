@@ -55,22 +55,25 @@
           <div class="card">
             <div class="card-body">
               <div class="form-check">
-                <input type="checkbox" id="event-safety1" class="form-check-input" aria-describedby="event-text" value="Masks Required" name="safety"> Masks Required
+                <input type="checkbox" id="event-safety1" class="form-check-input" aria-describedby="event-text" value="Outdoor Event" name="safety"> Outdoor Event
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety2" class="form-check-input" aria-describedby="event-text" value="Hand Sanitizer Stations" name="safety"> Hand Sanitizer stations
+                <input type="checkbox" id="event-safety2" class="form-check-input" aria-describedby="event-text" value="Masks Required" name="safety"> Masks Required
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety3" class="form-check-input" aria-describedby="event-text" value="Temperature Checks" name="safety"> Temperature Checks
+                <input type="checkbox" id="event-safety3" class="form-check-input" aria-describedby="event-text" value="Hand Sanitizer Stations" name="safety"> Hand Sanitizer stations
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety4" class="form-check-input" aria-describedby="event-text" value="Sitting Areas 6ft Apart" name="safety"> Sitting areas are 6 feet apart
+                <input type="checkbox" id="event-safety4" class="form-check-input" aria-describedby="event-text" value="Temperature Checks" name="safety"> Temperature Checks
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety5" class="form-check-input" aria-describedby="event-text" value="Capacity Limits" name="safety"> Capactiy limits
+                <input type="checkbox" id="event-safety5" class="form-check-input" aria-describedby="event-text" value="Sitting Areas 6ft Apart" name="safety"> Sitting areas are 6 feet apart
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety6" class="form-check-input" aria-describedby="event-text" value="Ground Markings for 6ft" name="safety"> 6 Feet Apart ground markings
+                <input type="checkbox" id="event-safety6" class="form-check-input" aria-describedby="event-text" value="Capacity Limits" name="safety"> Capactiy limits
+              </div>
+              <div class="form-check">
+                <input type="checkbox" id="event-safety7" class="form-check-input" aria-describedby="event-text" value="Ground Markings for 6ft" name="safety"> 6 Feet Apart ground markings
               </div>
             </div>
           </div>
@@ -80,7 +83,7 @@
         <ul id="event-list" class="list-group">
           {{#each events}}
           <li data-id="{{this.id}}" class="list-group-item">
-            <a href="event/{{this.id}}">{{this.text}}</a>
+            <a href="event/{{this.id}}">{{this.name}}</a>
             <button class="btn btn-danger float-right delete">ｘ</button>
           </li>
           {{/each}}
