@@ -81,7 +81,7 @@ const handleFormSubmit = function (review) {
   };
 
   if (!(reviews.title && reviews.description)) {
-    alert('You must enter an event text and description!');
+    alert('You must enter an review text and description!');
     return;
   }
   API.saveReview(reviews).then(function () {
@@ -91,10 +91,9 @@ const handleFormSubmit = function (review) {
   $reviewTitle.val('');
   $reviewDescription.val('');
   $reviewDate.val('');
-  // need to determine if these are needed
-  // $reviewType.val('');
-  // $reviewTime.val('');
-  // $reviewLocation.val('');
+  $reviewType.val('');
+  $reviewTime.val('');
+  $reviewLocation.val('');
 };
 
 // handleDeleteBtnClick is called when an review's delete button is clicked
