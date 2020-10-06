@@ -33,7 +33,7 @@ module.exports = function (sequelize, DataTypes) {
     },
     description: {
       type: DataTypes.TEXT,
-      allowNull: true,
+      allowNull: false,
       validate: {
         len: [1]
       }

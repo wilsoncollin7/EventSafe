@@ -8,7 +8,6 @@ module.exports = function (db) {
     },
     // Create a new event
     createEvent: function (req, res) {
-      console.log('made it to the creat event: ' + req.body);
       db.Event.create(req.body).then(function (dbEvent) {
         res.json(dbEvent);
       });

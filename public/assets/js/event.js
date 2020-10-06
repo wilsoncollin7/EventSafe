@@ -36,7 +36,7 @@ const API = {
   }
 };
 
-// refreshevents gets new events from the db and repopulates the list
+// refresh events gets new events from the db and repopulates the list
 const refreshEvents = function () {
   API.getEvent().then(function (data) {
     const $events = data.map(function (event) {
