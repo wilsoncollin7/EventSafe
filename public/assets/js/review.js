@@ -1,7 +1,7 @@
 // Get references to page elements
 const $reviewTitle = $('#review-title');
 const $reviewDescription = $('#review-description');
-const $reviewDate = $('review-date');
+const $reviewDate = $('#review-date');
 const $reviewLocation = $('#review-loc');
 const $reviewType = $('#review-type');
 const $submitBtn = $('#submit');
