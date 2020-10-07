@@ -116,6 +116,13 @@ hr {
 .dashboard-top {
   font-size: 36px;
   font-weight: 1000;
+  color: #3D405B;
+}
+
+.intro {
+  background-color: rgba(224, 122, 95, 0.25);
+  border-radius: 10px;
+  padding: 25px;
 }
 
 .card-body {

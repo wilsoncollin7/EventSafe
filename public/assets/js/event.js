@@ -116,10 +116,8 @@ const handleDeleteBtnClick = function () {
   });
 };
 
-refreshEvents();
+// refreshEvents();
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
 
 $eventList.on('click', '.delete', handleDeleteBtnClick);
-
-refreshEvents();
