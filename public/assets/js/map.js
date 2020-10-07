@@ -16,8 +16,8 @@ window.onload = function () {
       }
     });
   };
-  // ----- call the geocode function to grab the text and turn it into coordinates -----
   geocode();
+  // ----- call the geocode function to grab the text and turn it into coordinates -----
   // ----- the map function that created the map based off of corrdinates -----
   const initMap = function (data) {
     map = new google.maps.Map(document.getElementById('map'), {

@@ -8,9 +8,9 @@ module.exports = function (sequelize, DataTypes) {
       }
     },
     date: {
-      type: DataTypes.STRING,
+      type: DataTypes.DATEONLY,
       allowNull: true,
-      defaultValue: 'TBD',
+      defaultValue: new Date(),
       validate: {
         isDate: true
       }
