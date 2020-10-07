@@ -70,6 +70,7 @@ const refreshReview = function () {
 const handleFormSubmit = function (review) {
   review.preventDefault();
 
+  console.log('--------' + $reviewDate.val() + '---------------');
   const reviews = {
     title: $reviewTitle.val().trim(),
     date: $reviewDate.val(),
@@ -91,7 +92,6 @@ const handleFormSubmit = function (review) {
   $reviewDescription.val('');
   $reviewDate.val('');
   $reviewType.val('');
-  $reviewTime.val('');
   $reviewLocation.val('');
 };
 
