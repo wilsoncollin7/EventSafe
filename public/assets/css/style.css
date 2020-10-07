@@ -143,7 +143,7 @@ a {
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
-  width: 700px;
+  width: 80%;
 }
 
 .event-card-title {
@@ -168,9 +168,10 @@ h1 {
   height:100%;
   border-radius: .25rem;
   margin-bottom: 2%;
-  width: 800px;
+  width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  padding: 5px;
 }
 
 #img-margin {
@@ -180,4 +181,20 @@ h1 {
 
 .event-card-body {
   margin-top: 10px;
+}
+
+.event-list-group {
+  flex-direction: row;
+}
+
+@media only screen and (max-width: 768px) {
+  #home {
+      width: 100%;
+      height: auto;
+      padding-top: 10px;
+      margin-top: 10px;
+  }
+  .container-media {
+    padding-bottom: 20px;
+  }
 }

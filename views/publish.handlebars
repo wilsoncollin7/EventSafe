@@ -1,0 +1,30 @@
+{{> nav/nav-block}}
+
+<div class="container">
+  <div class="row">
+    <div class="col-8 offset-2">
+      <div class="card mt-4">
+        <img class="card-img-top" src="/assets/images/{{event.image}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title text-center">Event</h5>
+          <p>
+            <strong>Name</strong>: {{event.name}}</p>
+          <p>
+            <strong>Date</strong>: {{event.date}}</p>
+          <p>
+            <strong>Location</strong>: <a id="location">{{event.location}}</a></p>
+          <p>
+            <strong>Type</strong>: {{event.type}}</p>
+          <p>
+            <strong>Description:</strong> {{event.description}}</p>
+          <p>
+            <strong>Safety</strong>: {{event.safety}}</p>
+          <div id="map"></div>
+            <a  href="/views/event"><button type="button" class="btn">Create New Event</button></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{{> modal/login-block}}
