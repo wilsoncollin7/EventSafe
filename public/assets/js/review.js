@@ -79,7 +79,7 @@ const handleFormSubmit = function (review) {
     description: $reviewDescription.val().trim(),
     UserId: window.userId
   };
-
+  console.log($reviewDate.val());
   if (!(reviews.title && reviews.description)) {
     alert('You must enter an review text and description!');
     return;
