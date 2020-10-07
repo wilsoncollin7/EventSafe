@@ -7,6 +7,14 @@ module.exports = function (sequelize, DataTypes) {
         len: [1, 160]
       }
     },
+    date: {
+      type: DataTypes.STRING,
+      allowNull: true,
+      defaultValue: 'TBD',
+      validate: {
+        isDate: true
+      }
+    },
     location: {
       type: DataTypes.STRING,
       allowNull: true,
