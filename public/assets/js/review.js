@@ -70,7 +70,6 @@ const refreshReview = function () {
 const handleFormSubmit = function (review) {
   review.preventDefault();
 
-  console.log('--------' + $reviewDate.val() + '---------------');
   const reviews = {
     title: $reviewTitle.val().trim(),
     date: $reviewDate.val(),
@@ -82,6 +81,10 @@ const handleFormSubmit = function (review) {
   console.log($reviewDate.val());
   if (!(reviews.title && reviews.description)) {
     alert('You must enter an review text and description!');
+    return;
+  }
+  if (!(reviews.location)) {
+    alert('You must enter a location!');
     return;
   }
   API.saveReview(reviews).then(function () {

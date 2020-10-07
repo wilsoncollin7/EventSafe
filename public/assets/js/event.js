@@ -79,7 +79,6 @@ const handleFormSubmit = function (event) {
     }
   }
 
-  console.log('-------' + $eventDate.val() + '----------');
   const events = {
     name: $eventText.val().trim(),
     date: `${$eventDate.val()}T${$eventTime.val()}:00`,
@@ -92,6 +91,10 @@ const handleFormSubmit = function (event) {
   };
   if (!(events.name && events.description)) {
     alert('You must enter an event text and description!');
+    return;
+  }
+  if (!(events.location)) {
+    alert('You must enter a location!');
     return;
   }
   API.saveEvent(events).then(function () {
