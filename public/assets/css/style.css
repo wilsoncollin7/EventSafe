@@ -143,15 +143,39 @@ a {
   margin-left: auto;
   margin-right: auto;
   padding: 10px;
-  width: 80%;
+  width: 40%;
 }
 
-.event-card-title {
+.review-card {
+  border-color: black;
+  background-color: #F4F1DE;
+  color: black;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 10px;
+}
+
+.card-title {
   text-align: center;
   font-weight: 900;
   margin-bottom: 5px;
   font-size: 24px;
 }
+
+#event-card-title {
+  width: 100%;
+}
+
+.btn-lg {
+  width: 100%;
+}
+
+.review-btn {
+  width: 30%;
+}
+
 .dashboard-headers {
   color: #E07A5F !important;
 }
@@ -171,7 +195,8 @@ h1 {
   width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding: 5px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
 #img-margin {
@@ -183,8 +208,10 @@ h1 {
   margin-top: 10px;
 }
 
-.event-list-group {
+.event-row {
+  display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
 
 @media only screen and (max-width: 768px) {
@@ -196,5 +223,16 @@ h1 {
   }
   .container-media {
     padding-bottom: 20px;
+  }
+
+  .review-list-group {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .dashboard-media-container {
+    margin-left: auto;
+    margin-right: auto;
   }
 }
