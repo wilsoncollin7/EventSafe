@@ -138,7 +138,7 @@ module.exports = (db) => {
         res.render('review-detail', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
-          review: { ...dbReview, date: moment(dbReview.date).format('MMM Do YYYY , h:mm a') }
+          review: { ...dbReview, date: moment(dbReview.date).format('MMM Do YYYY') }
         });
       });
     } else {

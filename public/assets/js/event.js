@@ -94,6 +94,10 @@ const handleFormSubmit = function (event) {
     alert('You must enter an event text and description!');
     return;
   }
+  if (!(events.location)) {
+    alert('You must enter a location!');
+    return;
+  }
   API.saveEvent(events).then(function () {
     refreshEvents();
   });
