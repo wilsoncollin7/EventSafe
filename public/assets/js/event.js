@@ -121,5 +121,3 @@ refreshEvents();
 $submitBtn.on('click', handleFormSubmit);
 
 $eventList.on('click', '.delete', handleDeleteBtnClick);
-
-refreshEvents();
