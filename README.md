@@ -1,4 +1,5 @@
 # EventSafe
+[![Build Status](https://travis-ci.com/wilsoncollin7/EventSafe.svg?branch=master)](https://travis-ci.com/wilsoncollin7/EventSafe)
 
 ## Table of Contents
 
