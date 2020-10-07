@@ -1,8 +1,7 @@
 // Get references to page elements
 const $reviewTitle = $('#review-title');
 const $reviewDescription = $('#review-description');
-const $reviewDate = $('review-date');
-const $reviewTime = $('review-time');
+const $reviewDate = $('#review-date');
 const $reviewLocation = $('#review-loc');
 const $reviewType = $('#review-type');
 const $submitBtn = $('#submit');
@@ -71,9 +70,10 @@ const refreshReview = function () {
 const handleFormSubmit = function (review) {
   review.preventDefault();
 
+  console.log('--------' + $reviewDate.val() + '---------------');
   const reviews = {
     title: $reviewTitle.val().trim(),
-    date: `${$reviewDate.val()}T${$reviewTime.val()}:00`,
+    date: $reviewDate.val(),
     location: $reviewLocation.val().trim(),
     type: $reviewType.val().trim(),
     description: $reviewDescription.val().trim(),
@@ -92,7 +92,6 @@ const handleFormSubmit = function (review) {
   $reviewDescription.val('');
   $reviewDate.val('');
   $reviewType.val('');
-  $reviewTime.val('');
   $reviewLocation.val('');
 };
 
