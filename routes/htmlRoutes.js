@@ -44,8 +44,6 @@ module.exports = (db) => {
             dbReviews[i].postedBy = dbReviews[i]['User.firstName'] + ' ' + dbReviews[i]['User.lastName'];
             dbReviews[i].createdAt = moment(dbReviews[i].createdAt).format('MMM Do YYYY, h:mm a');
           }
-          // console.log(dbEvents);
-          // console.log(dbReviews);
           res.render('dashboard', {
             userInfo: req.session.passport.user,
             isloggedin: req.isAuthenticated(),
@@ -88,10 +86,8 @@ module.exports = (db) => {
 
   // Load event index page
   router.get('/event', function (req, res) {
-    console.log(req.session.passport.user.id);
     if (req.isAuthenticated()) {
       db.Event.findAll({ where: { UserId: req.session.passport.user.id }, raw: true }).then(function (dbEvents) {
-        console.log(dbEvents);
         res.render('event', {
           userInfo: req.session.passport.user,
           isloggedin: req.isAuthenticated(),
