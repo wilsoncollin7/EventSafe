@@ -79,7 +79,6 @@ const handleFormSubmit = function (event) {
     }
   }
 
-  console.log('-------' + $eventDate.val() + '----------');
   const events = {
     name: $eventText.val().trim(),
     date: `${$eventDate.val()}T${$eventTime.val()}:00`,
