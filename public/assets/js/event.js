@@ -89,7 +89,6 @@ const handleFormSubmit = function (event) {
     safety: safetyItems.join(' | '),
     UserId: window.userId
   };
-
   if (!(events.name && events.description)) {
     alert('You must enter an event text and description!');
     return;

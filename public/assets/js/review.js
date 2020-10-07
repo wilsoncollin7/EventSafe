@@ -1,8 +1,7 @@
 // Get references to page elements
 const $reviewTitle = $('#review-title');
 const $reviewDescription = $('#review-description');
-const $reviewDate = $('review-date');
-const $reviewTime = $('review-time');
+const $reviewDate = $('#review-date');
 const $reviewLocation = $('#review-loc');
 const $reviewType = $('#review-type');
 const $submitBtn = $('#submit');
@@ -73,13 +72,13 @@ const handleFormSubmit = function (review) {
 
   const reviews = {
     title: $reviewTitle.val().trim(),
-    date: `${$reviewDate.val()}T${$reviewTime.val()}:00`,
+    date: $reviewDate.val(),
     location: $reviewLocation.val().trim(),
     type: $reviewType.val().trim(),
     description: $reviewDescription.val().trim(),
     UserId: window.userId
   };
-
+  console.log($reviewDate.val());
   if (!(reviews.title && reviews.description)) {
     alert('You must enter an review text and description!');
     return;
