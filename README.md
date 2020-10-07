@@ -1,4 +1,5 @@
 # EventSafe
+[![Build Status](https://travis-ci.com/wilsoncollin7/EventSafe.svg?branch=master)](https://travis-ci.com/wilsoncollin7/EventSafe)
 
 ## Table of Contents
 
@@ -60,7 +61,7 @@ An application that allows users to see local events that follow COVID-19 precau
 
 ## License
 
-
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Contact Us
 
