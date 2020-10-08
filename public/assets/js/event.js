@@ -107,6 +107,9 @@ const handleFormSubmit = function (event) {
   $eventloc.val('');
   $eventDate.val('');
   $eventTime.val('');
+  $eventSafety.val('');
+
+  window.location.reload();
 };
 
 // handleDeleteBtnClick is called when an event's delete button is clicked
@@ -117,6 +120,7 @@ const handleDeleteBtnClick = function () {
   API.deleteEvent(idToDelete).then(function () {
     refreshEvents();
   });
+  window.location.reload();
 };
 
 // refreshEvents();

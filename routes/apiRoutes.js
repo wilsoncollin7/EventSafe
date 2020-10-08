@@ -15,12 +15,12 @@ module.exports = (passport, db) => {
   router.post('/user/confirm', AuthController.confirmAuth);
 
   // Event
-  router.get('/events', EventController.getEvents);
+  router.get('/events', EventController.getUsersEvents);
   router.post('/events', EventController.createEvent);
   router.delete('/events/:id', EventController.deleteEvent);
 
   // Review
-  router.get('/reviews', ReviewController.getReviews);
+  router.get('/reviews', ReviewController.getUsersReviews);
   router.post('/reviews', ReviewController.createReview);
   router.delete('/reviews/:id', ReviewController.deleteReview);
 
