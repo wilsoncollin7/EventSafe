@@ -68,7 +68,7 @@ $('#loc-addon').on('click', function () {
   }
 });
 // ----- function that converts the grabbed coordinates into a address to be displayed and saved into the db -----
-function geocodeLatLng(latlngCom) {
+function geocodeLatLng (latlngCom) {
   const geocoder = new google.maps.Geocoder();
   const input = latlngCom;
   const latlngStr = input.split(',', 2);
