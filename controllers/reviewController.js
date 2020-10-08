@@ -6,6 +6,11 @@ module.exports = function (db) {
         res.json(dbReview);
       });
     },
+    getUsersReviews: function (req, res) {
+      db.Review.findAll({ where: { UserId: req.session.passport.user.id }, raw: true }).then(function (dbReview) {
+        res.json(dbReview);
+      });
+    },
     // Create a new review
     createReview: function (req, res) {
       db.Review.create(req.body).then(function (dbReview) {

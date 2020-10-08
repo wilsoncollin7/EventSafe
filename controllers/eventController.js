@@ -6,6 +6,11 @@ module.exports = function (db) {
         res.json(dbEvent);
       });
     },
+    getUsersEvents: function (req, res) {
+      db.Event.findAll({ where: { UserId: req.session.passport.user.id }, raw: true }).then(function (dbEvent) {
+        res.json(dbEvent);
+      });
+    },
     // Create a new event
     createEvent: function (req, res) {
       db.Event.create(req.body).then(function (dbEvent) {
