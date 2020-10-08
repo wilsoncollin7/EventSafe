@@ -24,7 +24,6 @@ body {
   font-weight: bolder;
 }
 
-
 .jumbotron {
   background: rgba(0,0,0,0);
 }
@@ -256,11 +255,25 @@ h1 {
     margin-right: auto;
   }  
 
+  .dashboard-text {
+    offset-position: 0;
+  }
+
+  .event-row {
+    flex-direction: column;
+  }
+
+  .event-card, .review-card {
+    width: 100%;
+  }
+
   .btn-lg {
     font-size: 80%;
+    white-space: normal;
   }
   
   .review-btn {
     font-size: 80%;
+    white-space: normal;
   }
 }

@@ -16,6 +16,9 @@
 
 An application that allows users to see local events that follow COVID-19 precautions, and allows users to post reviews of local businesses regarding their COVID-19 safety practices. When registered and signed in, the user can create events, as well as write reviews about local businesses. All events and reviews are published to the dashboard, where the user can see a brief overview of each event, as well as click on the event name to see additional details.
 
+
+![Screen Shot](public/assets/images/screen-shot.png)
+
 ## Technologies
 
 * HTML
@@ -50,9 +53,6 @@ An application that allows users to see local events that follow COVID-19 precau
 * To delete your account, log in to your account and click on the My Profile option. Once there, you will see the option to delete your account. Click on the Delete button to close your account. Upon deleting your account, all reviews and events created under your account will be removed.
 
 * To log out of your account, select the Logout option in the upper righthand corner. Upon logging out, you will still be able to see events on the Home page, but you will not be able to create events, post reviews, or edit your account.
-
-## Application Demo
-
 
 
 ## Application Link
