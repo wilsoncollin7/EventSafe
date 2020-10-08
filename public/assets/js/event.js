@@ -108,8 +108,6 @@ const handleFormSubmit = function (event) {
   $eventDate.val('');
   $eventTime.val('');
   $eventSafety.val('');
-
-  window.location.reload();
 };
 
 // handleDeleteBtnClick is called when an event's delete button is clicked
@@ -120,10 +118,9 @@ const handleDeleteBtnClick = function () {
   API.deleteEvent(idToDelete).then(function () {
     refreshEvents();
   });
-  window.location.reload();
 };
 
-// refreshEvents();
+refreshEvents();
 // Add event listeners to the submit and delete buttons
 $submitBtn.on('click', handleFormSubmit);
 
