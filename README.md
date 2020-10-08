@@ -16,8 +16,17 @@
 
 An application that allows users to see local events that follow COVID-19 precautions, and allows users to post reviews of local businesses regarding their COVID-19 safety practices. When registered and signed in, the user can create events, as well as write reviews about local businesses. All events and reviews are published to the dashboard, where the user can see a brief overview of each event, as well as click on the event name to see additional details.
 
+![alt text](public/assets/images/es1.png)
+
+![alt text](public/assets/images/es2.png)
+
+![alt text](public/assets/images/es3.png)
+
+![alt text](public/assets/images/es4.png)
 
 ![Screen Shot](public/assets/images/screen-shot.png)
+
+![alt text](public/assets/images/es5.png)
 
 ## Technologies
 
