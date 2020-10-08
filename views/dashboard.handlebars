@@ -3,52 +3,56 @@
 <div id="dashboard">
   <div class="container dashboard-container mb-5">
     <div class="row">
-      <div class="col-lg-10 offset-1">
+      <div class="col-lg-1"></div>
+      <div class="col-lg-10">
         <h2 class="mt-4 mb-4 text-center dashboard-top">Let's Get Offline!</h2>
         <div class="intro">
-          <h3 class="mt-4 text-left">Looking to finally get out of the house for some fun, but want to stay safe? We're here to help.</h3>
+          <h3 class="mt-4 text-left">Looking to finally get out of the house for some fun, but want to stay safe? We're
+            here to help.</h3>
           <h3 class="mt-4 text-right">EventSafe offers a public forum for communities to advertise and search for local
             events that are practicing COVID-19 safety measures.</h3>
-          <h3 class="mt-4 text-left">Write reviews for local businesses to express your take on their approach to keeping
-          customers safe in the pandemic.</h3>
-         </div>
-         <h2 class="mt-4 text-center dashboard-top">Scroll to find your next COVID-19 Safe</h2>
-         <h2 class="text-center dashboard-top">Event or Business to visit!</h2>
+          <h3 class="mt-4 text-left">Write reviews for local businesses to express your take on their approach to
+            keeping
+            customers safe in the pandemic.</h3>
+        </div>
+        <h2 class="mt-4 text-center dashboard-top">Scroll to find your next COVID-19 Safe</h2>
+        <h2 class="text-center dashboard-top">Event or Business to visit!</h2>
       </div>
+      <div class="col-lg-1"></div>
     </div>
   </div>
 
   {{#if isloggedin}}
   {{!-- Events --}}
-  <div class="event-container mb-5">
+  <div class="container event-container mb-5">
     <h1>Safe Events Happening in Your Area</h1>
     <div class="row event-row">
-          {{#each events}}
-          <div class="event-card">
-            <div class="event-card-title card-header">
-              <a href="event/{{this.id}}" id="event-title"><button type="button"
-                  class="dashboard-headers btn btn-lg">{{this.name}}</button></a>
-            </div>
-            <img class="card-img-top" id="img-margin" src="/assets/images/{{this.image}}" alt="Card image cap">
-            <div class="event-card-body card-body">
-              <p id="event-date">
-                <strong>Date: </strong>{{this.date}}
-              <p>
-              <p id="event-location">
-                <strong>Location: </strong>{{this.location}}
-              <p>
-              <p id="event-type">
-                <strong>Type: </strong>{{this.type}}
-              <p>
-              <p id="event-description">
-                <strong>About: </strong>{{this.description}}
-              <p>
-              <p>
-                <i>posted by {{this.postedBy}} on {{this.createdAt}}</i>
-              <p>
-            </div>
-          </div>
-          {{/each}}
+      {{#each events}}
+      <div class="event-card">
+        <div class="event-card-title card-header">
+          <a href="event/{{this.id}}" id="event-title"><button type="button"
+              class="dashboard-headers btn btn-lg">{{this.name}}</button></a>
+        </div>
+        <img class="card-img-top" id="img-margin" src="/assets/images/{{this.image}}" alt="Card image cap">
+        <div class="event-card-body card-body">
+          <p id="event-date">
+            <strong>Date: </strong>{{this.date}}
+          <p>
+          <p id="event-location">
+            <strong>Location: </strong>{{this.location}}
+          <p>
+          <p id="event-type">
+            <strong>Type: </strong>{{this.type}}
+          <p>
+          <p id="event-description">
+            <strong>About: </strong>{{this.description}}
+          <p>
+          <p>
+            <i>posted by {{this.postedBy}} on {{this.createdAt}}</i>
+          <p>
+        </div>
+      </div>
+      {{/each}}
     </div>
   </div>
 
@@ -85,7 +89,7 @@
     </div>
   </div>
   {{else}}
-   <div class="container mt-0">
+  <div class="container mt-0">
     <div class="row">
       <div class="col-8 offset-2">
         <h2 class="mt-4 text-center dashboard-top">Register or Login to Get Started!</h2>

@@ -8,22 +8,27 @@
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="event-text">Event Name</label>
-            <input type="text" id="event-text" class="form-control" aria-describedby="event-text" placeholder="What is your event name?">
+            <input type="text" id="event-text" class="form-control" aria-describedby="event-text"
+              placeholder="What is your event name?">
           </div>
           <div class="form-group">
             <label for="event-date">Date</label>
-            <input type="date" id="event-date" class="form-control" aria-describedby="event-text" placeholder="Enter the event date">
+            <input type="date" id="event-date" class="form-control" aria-describedby="event-text"
+              placeholder="Enter the event date">
           </div>
           <div class="form-group">
             <label for="event-time">Time</label>
-            <input type="time" id="event-time" class="form-control" aria-describedby="event-text" placeholder="Enter the event time">
+            <input type="time" id="event-time" class="form-control" aria-describedby="event-text"
+              placeholder="Enter the event time">
           </div>
           <div class="form-group">
             <label for="event-loc">Location</label>
             <div class="input-group">
-              <input type="text" id="event-loc" class="form-control" aria-describedby="event-text" placeholder="Where is the event happening?">
+              <input type="text" id="event-loc" class="form-control" aria-describedby="event-text"
+                placeholder="Where is the event happening?">
               <div class="input-group-append">
-                <button class="btn btn-light" type="button" id="loc-addon"><i class="fa fa-crosshairs" aria-hidden="true"></i></button>
+                <button class="btn btn-light" type="button" id="loc-addon"><i class="fa fa-crosshairs"
+                    aria-hidden="true"></i></button>
               </div>
             </div>
           </div>
@@ -46,7 +51,8 @@
           </div>
           <div class="form-group">
             <label for="event-description">Description</label>
-            <textarea class="form-control" id="event-description" aria-describedby="event-description" placeholder="Tell us about it!"></textarea>
+            <textarea class="form-control" id="event-description" aria-describedby="event-description"
+              placeholder="Tell us about it!"></textarea>
           </div>
           {{!-- Safety Form --}}
           <div class="form-group">
@@ -55,25 +61,32 @@
           <div class="card">
             <div class="card-body">
               <div class="form-check">
-                <input type="checkbox" id="event-safety1" class="form-check-input" aria-describedby="event-text" value="Outdoor Event" name="safety"> Outdoor Event
+                <input type="checkbox" id="event-safety1" class="form-check-input" aria-describedby="event-text"
+                  value="Outdoor Event" name="safety"> Outdoor Event
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety2" class="form-check-input" aria-describedby="event-text" value="Masks Required" name="safety"> Masks Required
+                <input type="checkbox" id="event-safety2" class="form-check-input" aria-describedby="event-text"
+                  value="Masks Required" name="safety"> Masks Required
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety3" class="form-check-input" aria-describedby="event-text" value="Hand Sanitizer Stations" name="safety"> Hand Sanitizer stations
+                <input type="checkbox" id="event-safety3" class="form-check-input" aria-describedby="event-text"
+                  value="Hand Sanitizer Stations" name="safety"> Hand Sanitizer stations
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety4" class="form-check-input" aria-describedby="event-text" value="Temperature Checks" name="safety"> Temperature Checks
+                <input type="checkbox" id="event-safety4" class="form-check-input" aria-describedby="event-text"
+                  value="Temperature Checks" name="safety"> Temperature Checks
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety5" class="form-check-input" aria-describedby="event-text" value="Sitting Areas 6ft Apart" name="safety"> Sitting areas are 6 feet apart
+                <input type="checkbox" id="event-safety5" class="form-check-input" aria-describedby="event-text"
+                  value="Sitting Areas 6ft Apart" name="safety"> Sitting areas are 6 feet apart
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety6" class="form-check-input" aria-describedby="event-text" value="Capacity Limits" name="safety"> Capactiy limits
+                <input type="checkbox" id="event-safety6" class="form-check-input" aria-describedby="event-text"
+                  value="Capacity Limits" name="safety"> Capactiy limits
               </div>
               <div class="form-check">
-                <input type="checkbox" id="event-safety7" class="form-check-input" aria-describedby="event-text" value="Ground Markings for 6ft" name="safety"> 6 Feet Apart ground markings
+                <input type="checkbox" id="event-safety7" class="form-check-input" aria-describedby="event-text"
+                  value="Ground Markings for 6ft" name="safety"> 6 Feet Apart ground markings
               </div>
             </div>
           </div>
@@ -99,5 +112,5 @@
 {{> modal/login-block}}
 
 <script>
-  var userId = {{userInfo.id}};
+  var userId = {{ userInfo.id }};
 </script>

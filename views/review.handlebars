@@ -8,18 +8,22 @@
         <form class="clearfix mb-4" action="POST">
           <div class="form-group">
             <label for="review-title">Business</label>
-            <input type="text" id="review-title" class="form-control" aria-describedby="review-title" placeholder="What business did you recently visit?">
+            <input type="text" id="review-title" class="form-control" aria-describedby="review-title"
+              placeholder="What business did you recently visit?">
           </div>
-           <div class="form-group">
+          <div class="form-group">
             <label for="review-date">Date</label>
-            <input type="date" id="review-date" class="form-control" aria-describedby="review-date" placeholder="Enter the review date">  
-           </div>
+            <input type="date" id="review-date" class="form-control" aria-describedby="review-date"
+              placeholder="Enter the review date">
+          </div>
           <div class="form-group">
             <label for="review-loc">Location</label>
             <div class="input-group">
-              <input type="text" id="review-loc" class="form-control" aria-describedby="review-loc" placeholder="What city were you in?">
+              <input type="text" id="review-loc" class="form-control" aria-describedby="review-loc"
+                placeholder="What city were you in?">
               <div class="input-group-append">
-                <button class="btn btn-light" type="button" id="loc-addon"><i class="fa fa-crosshairs" aria-hidden="true"></i></button>
+                <button class="btn btn-light" type="button" id="loc-addon"><i class="fa fa-crosshairs"
+                    aria-hidden="true"></i></button>
               </div>
             </div>
           </div>
@@ -36,7 +40,8 @@
           </div>
           <div class="form-group">
             <label for="review-description">Review</label>
-            <textarea class="form-control" id="review-description" aria-describedby="review-description" placeholder="Your review of their COVID-19 Safety practices. Were masks required? Was social distancing enforced? Any other special precautions noticed?"></textarea>
+            <textarea class="form-control" id="review-description" aria-describedby="review-description"
+              placeholder="Your review of their COVID-19 Safety practices. Were masks required? Was social distancing enforced? Any other special precautions noticed?"></textarea>
           </div>
           <button id="submit" class="btn btn-primary float-right">Submit</button>
         </form>
@@ -60,5 +65,5 @@
 {{> modal/login-block}}
 
 <script>
-  var userId = {{userInfo.id}};
+  var userId = {{ userInfo.id }};
 </script>
