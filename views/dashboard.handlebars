@@ -28,30 +28,30 @@
     <h1>Safe Events Happening in Your Area</h1>
     <div class="row event-row">
       {{#each events}}
-        <div class="event-card">
-          <div class="event-card-title card-header">
-            <a href="event/{{this.id}}" id="event-title"><button type="button"
-                class="dashboard-headers btn btn-lg">{{this.name}}</button></a>
-          </div>
-          <img class="card-img-top" id="img-margin" src="/assets/images/{{this.image}}" alt="Card image cap">
-          <div class="event-card-body card-body">
-            <p id="event-date">
-              <strong>Date: </strong>{{this.date}}
-            <p>
-            <p id="event-location">
-              <strong>Location: </strong>{{this.location}}
-            <p>
-            <p id="event-type">
-              <strong>Type: </strong>{{this.type}}
-            <p>
-            <p id="event-description">
-              <strong>About: </strong>{{this.description}}
-            <p>
-            <p>
-              <i>posted by {{this.postedBy}} on {{this.createdAt}}</i>
-            <p>
-          </div>
+      <div class="event-card">
+        <div class="event-card-title card-header">
+          <a href="event/{{this.id}}" id="event-title"><button type="button"
+              class="dashboard-headers btn btn-lg">{{this.name}}</button></a>
         </div>
+        <img class="card-img-top" id="img-margin" src="/assets/images/{{this.image}}" alt="Card image cap">
+        <div class="event-card-body card-body">
+          <p id="event-date">
+            <strong>Date: </strong>{{this.date}}
+          <p>
+          <p id="event-location">
+            <strong>Location: </strong>{{this.location}}
+          <p>
+          <p id="event-type">
+            <strong>Type: </strong>{{this.type}}
+          <p>
+          <p id="event-description">
+            <strong>About: </strong>{{this.description}}
+          <p>
+          <p>
+            <i>posted by {{this.postedBy}} on {{this.createdAt}}</i>
+          <p>
+        </div>
+      </div>
       {{/each}}
     </div>
   </div>
