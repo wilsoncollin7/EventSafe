@@ -33,8 +33,8 @@ module.exports = (db) => {
   // Load dashboard page
   router.get('/', (req, res) => {
     if (req.isAuthenticated()) {
-      db.Event.findAll({ limit: 5, order: [['date', 'ASC']], include: [db.User], raw: true }).then(function (dbEvents) {
-        db.Review.findAll({ limit: 5, order: [['createdAt', 'DESC']], include: [db.User], raw: true }).then(function (dbReviews) {
+      db.Event.findAll({ limit: 10, order: [['date', 'ASC']], include: [db.User], raw: true }).then(function (dbEvents) {
+        db.Review.findAll({ limit: 10, order: [['createdAt', 'DESC']], include: [db.User], raw: true }).then(function (dbReviews) {
           for (let i = 0; i < dbEvents.length; i++) {
             dbEvents[i].postedBy = dbEvents[i]['User.firstName'] + ' ' + dbEvents[i]['User.lastName'];
             dbEvents[i].date = moment(dbEvents[i].date).format('MMM Do YYYY, h:mm a');
@@ -60,8 +60,8 @@ module.exports = (db) => {
   // Load dashboard page
   router.get('/dashboard', (req, res) => {
     if (req.isAuthenticated()) {
-      db.Event.findAll({ limit: 5, order: [['date', 'ASC']], include: [db.User], raw: true }).then(function (dbEvents) {
-        db.Review.findAll({ limit: 5, order: [['createdAt', 'DESC']], include: [db.User], raw: true }).then(function (dbReviews) {
+      db.Event.findAll({ limit: 10, order: [['date', 'ASC']], include: [db.User], raw: true }).then(function (dbEvents) {
+        db.Review.findAll({ limit: 10, order: [['createdAt', 'DESC']], include: [db.User], raw: true }).then(function (dbReviews) {
           for (let i = 0; i < dbEvents.length; i++) {
             dbEvents[i].postedBy = dbEvents[i]['User.firstName'] + ' ' + dbEvents[i]['User.lastName'];
             dbEvents[i].date = moment(dbEvents[i].date).format('MMM Do YYYY, h:mm a');
