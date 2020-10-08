@@ -79,7 +79,7 @@ body {
   height:100%;
   border-radius: .25rem;
   margin-bottom: 2%;
-  width: 1000px;
+  width: 100%;
 }
 
 .container-full {
@@ -231,12 +231,14 @@ h1 {
   justify-content: space-around;
 }
 
+/* ----- media ----- */
+
 @media only screen and (max-width: 768px) {
   #home {
-      width: 100%;
-      height: auto;
-      padding-top: 10px;
-      margin-top: 10px;
+    width: 100%;
+    height: auto;
+    padding-top: 10px;
+    margin-top: 10px;
   }
   .container-media {
     padding-bottom: 20px;
@@ -252,12 +254,7 @@ h1 {
     margin-top: 20%;
     margin-left: auto;
     margin-right: auto;
-    width: 1200px !important;
   }  
-
-  .event-container {
-    width: 1200px;
-  }
 
   .btn-lg {
     font-size: 80%;
